@@ -1,0 +1,1082 @@
+[
+{
+"zona": "01",
+"puesto": "01",
+"nombre": "ESC. JOSE ACEVEDO Y GOMEZ"
+},
+{
+"zona": "01",
+"puesto": "02",
+"nombre": "IE JOSE HOLGUIN GARCES"
+},
+{
+"zona": "01",
+"puesto": "03",
+"nombre": "IE JOSE CELESTINO MUTIS"
+},
+{
+"zona": "01",
+"puesto": "04",
+"nombre": "COLISEO BAJO AGUACATAL"
+},
+{
+"zona": "01",
+"puesto": "05",
+"nombre": "IE CECILIA CABALLERO"
+},
+{
+"zona": "01",
+"puesto": "06",
+"nombre": "SEDE MARICE SINISTERRA TERRON"
+},
+{
+"zona": "01",
+"puesto": "07",
+"nombre": "COL SANTA ISABEL DE HUNGRIA AGUACATAL"
+},
+{
+"zona": "01",
+"puesto": "08",
+"nombre": "IE ISAIAS GAMBOA"
+},
+{
+"zona": "01",
+"puesto": "09",
+"nombre": "IE LUIS FERNANDO CAICEDO"
+},
+{
+"zona": "02",
+"puesto": "01",
+"nombre": "INST UNIV ANTONIO JOSE CAMACHO"
+},
+{
+"zona": "02",
+"puesto": "02",
+"nombre": "EDIFICIO FERROCARRILES NACIONALES"
+},
+{
+"zona": "02",
+"puesto": "03",
+"nombre": "C.A.M."
+},
+{
+"zona": "02",
+"puesto": "04",
+"nombre": "COLEGIO ODONTOLOGICO"
+},
+{
+"zona": "02",
+"puesto": "05",
+"nombre": "ACADEMIA DE DIBUJO PROFESIONAL"
+},
+{
+"zona": "02",
+"puesto": "06",
+"nombre": "COLEGIO HISPANOAMERICANO"
+},
+{
+"zona": "03",
+"puesto": "01",
+"nombre": "PARQUE DE LAS ORQUIDEAS"
+},
+{
+"zona": "03",
+"puesto": "02",
+"nombre": "IE SANTA CECILIA"
+},
+{
+"zona": "03",
+"puesto": "03",
+"nombre": "ESCUELA REPUBLICA DEL BRASIL"
+},
+{
+"zona": "03",
+"puesto": "04",
+"nombre": "ESCUELA BRISAS DE LOS ALAMOS"
+},
+{
+"zona": "03",
+"puesto": "05",
+"nombre": "COLEGIO LEONISTICO LA MERCED"
+},
+{
+"zona": "03",
+"puesto": "06",
+"nombre": "CORPORACION PARA LA TERCERA EDAD"
+},
+{
+"zona": "04",
+"puesto": "01",
+"nombre": "ASAMBLEA DEPARTAMENTAL"
+},
+{
+"zona": "04",
+"puesto": "02",
+"nombre": "ESCUELA CARLOS A SARDI"
+},
+{
+"zona": "04",
+"puesto": "03",
+"nombre": "IE SANTA LIBRADA"
+},
+{
+"zona": "04",
+"puesto": "04",
+"nombre": "IE NORMAL SUPERIOR LOS FARALLONES"
+},
+{
+"zona": "04",
+"puesto": "05",
+"nombre": "ESCUELA REPUBLICA DE MEXICO"
+},
+{
+"zona": "04",
+"puesto": "06",
+"nombre": "CENTRO COMERCIAL ARISTI"
+},
+{
+"zona": "04",
+"puesto": "07",
+"nombre": "CENTRO COMERCIAL GRAN COMERCIO"
+},
+{
+"zona": "05",
+"puesto": "01",
+"nombre": "SEDE MANUELA BELTRAN"
+},
+{
+"zona": "05",
+"puesto": "02",
+"nombre": "IE JOSE ANTONIO GALAN"
+},
+{
+"zona": "05",
+"puesto": "03",
+"nombre": "ESCUELA RAFAEL ZAMORANO"
+},
+{
+"zona": "05",
+"puesto": "04",
+"nombre": "COLEGIO INEM"
+},
+{
+"zona": "05",
+"puesto": "05",
+"nombre": "IE CASD SEDE SANTO TOMAS"
+},
+{
+"zona": "05",
+"puesto": "06",
+"nombre": "SEDE SAN VICENTE DE PAUL"
+},
+{
+"zona": "05",
+"puesto": "07",
+"nombre": "INSTITUTO COMERCIAL ARQUIDIOCESANO"
+},
+{
+"zona": "05",
+"puesto": "08",
+"nombre": "IE LA MERCED"
+},
+{
+"zona": "06",
+"puesto": "01",
+"nombre": "SENA"
+},
+{
+"zona": "06",
+"puesto": "02",
+"nombre": "IE CELMIRA BUENO DE OREJUELA"
+},
+{
+"zona": "06",
+"puesto": "03",
+"nombre": "ESCUELA MARIANO OSPINA PEREZ"
+},
+{
+"zona": "06",
+"puesto": "04",
+"nombre": "ESCUELA MARIA PANESSO"
+},
+{
+"zona": "06",
+"puesto": "05",
+"nombre": "ESCUELA MARIO LLOREDA"
+},
+{
+"zona": "06",
+"puesto": "06",
+"nombre": "IE SIMON RODRIGUEZ"
+},
+{
+"zona": "07",
+"puesto": "01",
+"nombre": "POLIDEPORTIVO LOS GUADUALES"
+},
+{
+"zona": "07",
+"puesto": "02",
+"nombre": "ESCUELA LAS AMERICAS"
+},
+{
+"zona": "07",
+"puesto": "03",
+"nombre": "ESCUELA PABLO EMILIO CAICEDO"
+},
+{
+"zona": "07",
+"puesto": "04",
+"nombre": "SANTA ISABEL DE HUNGRIA CALIMIO NORTE"
+},
+{
+"zona": "07",
+"puesto": "05",
+"nombre": "SEDE CECILIA MUÑOZ RICAURTE"
+},
+{
+"zona": "08",
+"puesto": "01",
+"nombre": "ESCUELA SAN JORGE"
+},
+{
+"zona": "08",
+"puesto": "02",
+"nombre": "IE PEDRO ANTONIO MOLINA"
+},
+{
+"zona": "08",
+"puesto": "03",
+"nombre": "ESCUELA TRES DE JULIO"
+},
+{
+"zona": "08",
+"puesto": "04",
+"nombre": "ESCUELA ATANASIO GIRARDOT"
+},
+{
+"zona": "08",
+"puesto": "05",
+"nombre": "UNIDAD DEPORTIVA PETECUY II"
+},
+{
+"zona": "08",
+"puesto": "06",
+"nombre": "SEDE LOS VENCEDORES"
+},
+{
+"zona": "09",
+"puesto": "01",
+"nombre": "COL STA ISABEL  HUNGRIA ALFONSO LOPEZ"
+},
+{
+"zona": "09",
+"puesto": "02",
+"nombre": "ESCUELA LOS FARALLONES"
+},
+{
+"zona": "09",
+"puesto": "03",
+"nombre": "IE VICENTE BORRERO COSTA"
+},
+{
+"zona": "09",
+"puesto": "04",
+"nombre": "ESCUELA MANUEL MARIA MALLARINO"
+},
+{
+"zona": "09",
+"puesto": "05",
+"nombre": "IE JUAN BAUTISTA DE LA SALLE"
+},
+{
+"zona": "09",
+"puesto": "06",
+"nombre": "IE ALFONSO LOPEZ PUMAREJO"
+},
+{
+"zona": "09",
+"puesto": "07",
+"nombre": "SEDE CENTRAL PROVIVIENDA"
+},
+{
+"zona": "10",
+"puesto": "01",
+"nombre": "IE MANUEL MARIA MALLARINO CEIBAS"
+},
+{
+"zona": "10",
+"puesto": "02",
+"nombre": "ESCUELA CARLOS HOLGUIN SARDI"
+},
+{
+"zona": "10",
+"puesto": "03",
+"nombre": "ESCUELA ANA MARIA VERNAZA"
+},
+{
+"zona": "10",
+"puesto": "04",
+"nombre": "IE SIETE DE AGOSTO"
+},
+{
+"zona": "11",
+"puesto": "01",
+"nombre": "ESCUELA MANUEL REBOLLEDO"
+},
+{
+"zona": "11",
+"puesto": "02",
+"nombre": "INST TEC COMERCIAL LAS AMERICAS"
+},
+{
+"zona": "11",
+"puesto": "03",
+"nombre": "IE SANTA FE"
+},
+{
+"zona": "11",
+"puesto": "04",
+"nombre": "IE BENJAMIN HERRERA"
+},
+{
+"zona": "11",
+"puesto": "05",
+"nombre": "IE EVARISTO GARCIA"
+},
+{
+"zona": "12",
+"puesto": "01",
+"nombre": "COLEGIO LEON DE GREIFF"
+},
+{
+"zona": "12",
+"puesto": "02",
+"nombre": "COLEGIO NUESTRA SRA DE LA ANUNCIACION"
+},
+{
+"zona": "12",
+"puesto": "03",
+"nombre": "COLEGIO SAN FRANCISCO DE ASIS"
+},
+{
+"zona": "12",
+"puesto": "04",
+"nombre": "IE ALBERTO CARVAJAL BORRERO"
+},
+{
+"zona": "13",
+"puesto": "01",
+"nombre": "ESCUELA MARCO FIDEL SUAREZ"
+},
+{
+"zona": "13",
+"puesto": "02",
+"nombre": "ESC NUESTRA SEÑORA DE LOS REMEDIOS"
+},
+{
+"zona": "13",
+"puesto": "03",
+"nombre": "IE REPUBLICA DE ARGENTINA"
+},
+{
+"zona": "13",
+"puesto": "04",
+"nombre": "ESCUELA OLGA LUCIA LLOREDA"
+},
+{
+"zona": "13",
+"puesto": "05",
+"nombre": "IE ANTONIO JOSE CAMACHO"
+},
+{
+"zona": "13",
+"puesto": "06",
+"nombre": "IE GENERAL ALFREDO VASQUEZ COBO"
+},
+{
+"zona": "14",
+"puesto": "01",
+"nombre": "SEDE REPUBLICA DE COSTA RICA"
+},
+{
+"zona": "14",
+"puesto": "02",
+"nombre": "ESCUELA FERNANDO VELASCO"
+},
+{
+"zona": "14",
+"puesto": "03",
+"nombre": "IE NORMAL SUPERIOR SANTIAGO"
+},
+{
+"zona": "14",
+"puesto": "04",
+"nombre": "IE CARLOS HOLGUIN LLOREDA"
+},
+{
+"zona": "14",
+"puesto": "05",
+"nombre": "IE JOSE MARIA VIVAS BALCAZAR"
+},
+{
+"zona": "15",
+"puesto": "01",
+"nombre": "CENTRO PARROQUIAL SAN JUAN BAUTISTA"
+},
+{
+"zona": "15",
+"puesto": "02",
+"nombre": "ESCUELA SAN ROQUE"
+},
+{
+"zona": "15",
+"puesto": "03",
+"nombre": "IE RAFAEL NAVIA VARON"
+},
+{
+"zona": "15",
+"puesto": "04",
+"nombre": "ESCUELA GENERAL CARLOS ALBAN"
+},
+{
+"zona": "16",
+"puesto": "01",
+"nombre": "IE AGUSTIN NIETO CABALLERO"
+},
+{
+"zona": "16",
+"puesto": "02",
+"nombre": "IE CIUDAD MODELO"
+},
+{
+"zona": "16",
+"puesto": "03",
+"nombre": "ESCUELA  MARINO RENGIFO SALCEDO"
+},
+{
+"zona": "16",
+"puesto": "04",
+"nombre": "ESCUELA SUSANA VINASCO DE QUINTANA"
+},
+{
+"zona": "16",
+"puesto": "05",
+"nombre": "IE VILLA DEL SUR"
+},
+{
+"zona": "17",
+"puesto": "01",
+"nombre": "ESCUELA JOSE VICENTE CONCHA"
+},
+{
+"zona": "17",
+"puesto": "02",
+"nombre": "IE CIUDAD DE CALI"
+},
+{
+"zona": "17",
+"puesto": "03",
+"nombre": "IE 10 DE MAYO"
+},
+{
+"zona": "17",
+"puesto": "04",
+"nombre": "CDI MADRE ALBERTA FE Y ALEGRIA"
+},
+{
+"zona": "18",
+"puesto": "01",
+"nombre": "IE JUAN XXIII SEDE CIUDAD DE CALI"
+},
+{
+"zona": "18",
+"puesto": "02",
+"nombre": "IE MARICE SINISTERRA"
+},
+{
+"zona": "18",
+"puesto": "03",
+"nombre": "IE HERNANDO NAVIA VARON"
+},
+{
+"zona": "18",
+"puesto": "04",
+"nombre": "ESCUELA FENALCO ASTURIAS"
+},
+{
+"zona": "18",
+"puesto": "05",
+"nombre": "IE JULIO DE CAICEDO Y TELLEZ"
+},
+{
+"zona": "18",
+"puesto": "06",
+"nombre": "COLEGIO LA PRESENTACION EL PARAISO"
+},
+{
+"zona": "19",
+"puesto": "01",
+"nombre": "COL PARROQUIAL SEÑOR DE LOS MILAGROS"
+},
+{
+"zona": "19",
+"puesto": "02",
+"nombre": "IE EL DIAMANTE"
+},
+{
+"zona": "19",
+"puesto": "03",
+"nombre": "ESCUELA RODRIGO LLOREDA"
+},
+{
+"zona": "19",
+"puesto": "04",
+"nombre": "ESCUELA MIGUEL CAMACHO PEREA"
+},
+{
+"zona": "19",
+"puesto": "05",
+"nombre": "CENTRO DE CAPACITACION DON BOSCO"
+},
+{
+"zona": "19",
+"puesto": "06",
+"nombre": "COLEGIO COMFANDI CALIPSO"
+},
+{
+"zona": "20",
+"puesto": "01",
+"nombre": "IE SANTA ROSA"
+},
+{
+"zona": "20",
+"puesto": "02",
+"nombre": "COLEGIO PANAMERICANO LOS LAGOS"
+},
+{
+"zona": "20",
+"puesto": "03",
+"nombre": "IE BARTOLOME LOBOGUERRERO"
+},
+{
+"zona": "20",
+"puesto": "04",
+"nombre": "SENA CDTI"
+},
+{
+"zona": "20",
+"puesto": "05",
+"nombre": "IE JESUS VILLAFAÑE FRANCO"
+},
+{
+"zona": "20",
+"puesto": "06",
+"nombre": "SEDE ENRIQUE OLAYA HERRERA"
+},
+{
+"zona": "20",
+"puesto": "07",
+"nombre": "IE LUZ HAYDEE GUERRERO MOLINA"
+},
+{
+"zona": "21",
+"puesto": "01",
+"nombre": "IE LA ANUNCIACION"
+},
+{
+"zona": "21",
+"puesto": "02",
+"nombre": "SEDE PUERTA DEL SOL"
+},
+{
+"zona": "21",
+"puesto": "03",
+"nombre": "ESCUELA RAUL SILVA HOLGUIN"
+},
+{
+"zona": "21",
+"puesto": "04",
+"nombre": "IE MONSEÑOR RAMON ARCILA"
+},
+{
+"zona": "21",
+"puesto": "05",
+"nombre": "IE LLANO VERDE SEDE BARTOLOME MITRE"
+},
+{
+"zona": "22",
+"puesto": "01",
+"nombre": "COL FRAY LUIS AMIGO FE Y ALEGRIA"
+},
+{
+"zona": "22",
+"puesto": "02",
+"nombre": "IE GABRIELA MISTRAL"
+},
+{
+"zona": "22",
+"puesto": "03",
+"nombre": "COL PARROQUIAL SAN FRANCISCO JAVIER"
+},
+{
+"zona": "22",
+"puesto": "04",
+"nombre": "IE ELIAS SALAZAR GARCIA"
+},
+{
+"zona": "22",
+"puesto": "05",
+"nombre": "IE NUEVO LATIR"
+},
+{
+"zona": "23",
+"puesto": "01",
+"nombre": "IE CUDAD CORDOBA"
+},
+{
+"zona": "23",
+"puesto": "02",
+"nombre": "ESCUELA OLAYA HERRERA"
+},
+{
+"zona": "23",
+"puesto": "03",
+"nombre": "ESCUELA JOSE RAMON BEJARANO"
+},
+{
+"zona": "23",
+"puesto": "04",
+"nombre": "IE GABRIEL GARCIA MARQUEZ"
+},
+{
+"zona": "23",
+"puesto": "05",
+"nombre": "IE ISAIAS DUARTE CANCINO"
+},
+{
+"zona": "23",
+"puesto": "06",
+"nombre": "IE CARLOS HOLGUIN MALLARINO"
+},
+{
+"zona": "23",
+"puesto": "07",
+"nombre": "COLEGIO MADRE SIFFREDI FE Y ALEGRIA"
+},
+{
+"zona": "23",
+"puesto": "08",
+"nombre": "IE LLANO VERDE"
+},
+{
+"zona": "24",
+"puesto": "01",
+"nombre": "IE RODRIGO LLOREDA INTENALCO"
+},
+{
+"zona": "24",
+"puesto": "02",
+"nombre": "IE CRISTOBAL COLON"
+},
+{
+"zona": "24",
+"puesto": "03",
+"nombre": "IE CARLOS HOLMES TRUJILLO"
+},
+{
+"zona": "24",
+"puesto": "04",
+"nombre": "ESCUELA PABLO NERUDA"
+},
+{
+"zona": "24",
+"puesto": "05",
+"nombre": "SEDE CRISTO MAESTRO"
+},
+{
+"zona": "24",
+"puesto": "06",
+"nombre": "SANTA ISABEL DE HUNGRIA CIUDAD 2000"
+},
+{
+"zona": "24",
+"puesto": "07",
+"nombre": "SEDE ANGELICA SIERRA"
+},
+{
+"zona": "25",
+"puesto": "01",
+"nombre": "COLEGIO LOS ANDES"
+},
+{
+"zona": "25",
+"puesto": "02",
+"nombre": "COLEGIO COMFANDI"
+},
+{
+"zona": "25",
+"puesto": "03",
+"nombre": "COLEGIO REYES CATOLICOS"
+},
+{
+"zona": "25",
+"puesto": "04",
+"nombre": "UNIVALLE SEDE MELENDEZ"
+},
+{
+"zona": "26",
+"puesto": "01",
+"nombre": "ESCUELA LUIS CARLOS ROJAS"
+},
+{
+"zona": "26",
+"puesto": "02",
+"nombre": "CVC"
+},
+{
+"zona": "26",
+"puesto": "03",
+"nombre": "CENTRO CULTURAL COLOMBO AMERICANO"
+},
+{
+"zona": "26",
+"puesto": "04",
+"nombre": "IETI COMUNA 17"
+},
+{
+"zona": "26",
+"puesto": "05",
+"nombre": "COLEGIO NUESTRA SRA DE LA CONSOLACION"
+},
+{
+"zona": "27",
+"puesto": "01",
+"nombre": "ESCUELA ALVARO ESCOBAR NAVIA"
+},
+{
+"zona": "27",
+"puesto": "02",
+"nombre": "INSTITUTO CENTRAL DE COMERCIO"
+},
+{
+"zona": "27",
+"puesto": "03",
+"nombre": "IE JUAN PABLO II"
+},
+{
+"zona": "27",
+"puesto": "04",
+"nombre": "ESCUELA PORTETE DE TARQUI"
+},
+{
+"zona": "27",
+"puesto": "05",
+"nombre": "UNIVERSIDAD COOPERATIVA"
+},
+{
+"zona": "27",
+"puesto": "06",
+"nombre": "SEDE CELIMO RUEDA"
+},
+{
+"zona": "27",
+"puesto": "07",
+"nombre": "SEDE JHON F KENNEDY"
+},
+{
+"zona": "28",
+"puesto": "01",
+"nombre": "IE LA ESPERANZA"
+},
+{
+"zona": "28",
+"puesto": "02",
+"nombre": "COLEGIO AMERICANO"
+},
+{
+"zona": "28",
+"puesto": "03",
+"nombre": "ESC MAGDALENA ORTEGA DE NARIÑO"
+},
+{
+"zona": "28",
+"puesto": "04",
+"nombre": "ACADEMIA JOSE MARIA CABAL"
+},
+{
+"zona": "28",
+"puesto": "05",
+"nombre": "UNIVERSIDAD CATOLICA SEDE MELENDEZ"
+},
+{
+"zona": "28",
+"puesto": "06",
+"nombre": "SEDE EDUARDO RIASCOS GRUESO"
+},
+{
+"zona": "29",
+"puesto": "01",
+"nombre": "IE EUSTAQUIO PALACIOS"
+},
+{
+"zona": "29",
+"puesto": "02",
+"nombre": "INSTITUTO PARA NIÑOS CIEGOS Y SORDOS"
+},
+{
+"zona": "29",
+"puesto": "03",
+"nombre": "COL SANTA MARIA STELLA MARIS"
+},
+{
+"zona": "29",
+"puesto": "04",
+"nombre": "ESCUELA 25 DE JULIO"
+},
+{
+"zona": "29",
+"puesto": "05",
+"nombre": "COLEGIO POLITECNICO"
+},
+{
+"zona": "29",
+"puesto": "06",
+"nombre": "IE MULTIPROPOSITO"
+},
+{
+"zona": "30",
+"puesto": "01",
+"nombre": "UNIVALLE SEDE SAN FERNANDO"
+},
+{
+"zona": "30",
+"puesto": "02",
+"nombre": "UNID DEP PANAM CANCHA DE TEJO"
+},
+{
+"zona": "30",
+"puesto": "03",
+"nombre": "IE LICEO DEPARTAMENTAL"
+},
+{
+"zona": "30",
+"puesto": "04",
+"nombre": "ESCUELA FRANCISCO JOSE DE CALDAS"
+},
+{
+"zona": "30",
+"puesto": "05",
+"nombre": "ESCUELA CAMILO TORRES"
+},
+{
+"zona": "30",
+"puesto": "06",
+"nombre": "ESCUELA GRAN COLOMBIA"
+},
+{
+"zona": "30",
+"puesto": "07",
+"nombre": "SEDE LOS CRISTALES"
+},
+{
+"zona": "31",
+"puesto": "01",
+"nombre": "COLEGIO ARQUIDIOCESANO JUAN PABLO II"
+},
+{
+"zona": "31",
+"puesto": "02",
+"nombre": "ESCUELA LUIS LOPEZ DE MESA"
+},
+{
+"zona": "31",
+"puesto": "03",
+"nombre": "IE JUANA DE CAICEDO Y CUERO"
+},
+{
+"zona": "31",
+"puesto": "04",
+"nombre": "SEDE SIMON BOLIVAR"
+},
+{
+"zona": "31",
+"puesto": "05",
+"nombre": "SEDE ANTONIA SANTOS"
+},
+{
+"zona": "31",
+"puesto": "06",
+"nombre": "ESCUELA SOFIA CAMARGO"
+},
+{
+"zona": "32",
+"puesto": "01",
+"nombre": "SEDE NUEVO AMANECER"
+},
+{
+"zona": "32",
+"puesto": "02",
+"nombre": "STA ISABEL DE HUNGRIA CALIMIO DECEPAZ"
+},
+{
+"zona": "32",
+"puesto": "03",
+"nombre": "SANTA ISABEL DE HUNGRIA SAN FELIPE"
+},
+{
+"zona": "32",
+"puesto": "04",
+"nombre": "COLEGIO FUNDACION COMPARTIR"
+},
+{
+"zona": "32",
+"puesto": "05",
+"nombre": "IE PROGRESANDO JUNTOS"
+},
+{
+"zona": "32",
+"puesto": "06",
+"nombre": "COLEGIO POTREROGRANDE"
+},
+{
+"zona": "32",
+"puesto": "07",
+"nombre": "IE LLANO VERDE SEDE INVICALI"
+},
+{
+"zona": "33",
+"puesto": "01",
+"nombre": "COLEGIO BENETT"
+},
+{
+"zona": "33",
+"puesto": "02",
+"nombre": "UNIVERSIDAD DE SAN BUENAVENTURA"
+},
+{
+"zona": "33",
+"puesto": "03",
+"nombre": "UNIVERSIDAD ICESI"
+},
+{
+"zona": "90",
+"puesto": "01",
+"nombre": "COLISEO DEL PUEBLO"
+},
+{
+"zona": "98",
+"puesto": "01",
+"nombre": "CARCEL VILLANUEVA"
+},
+{
+"zona": "99",
+"puesto": "09",
+"nombre": "FELIDIA"
+},
+{
+"zona": "99",
+"puesto": "13",
+"nombre": "HORMIGUERO A"
+},
+{
+"zona": "99",
+"puesto": "14",
+"nombre": "HORMIGUERO B (BOCHALEMA)"
+},
+{
+"zona": "99",
+"puesto": "17",
+"nombre": "LA BUITRERA"
+},
+{
+"zona": "99",
+"puesto": "19",
+"nombre": "LA SIRENA"
+},
+{
+"zona": "99",
+"puesto": "21",
+"nombre": "LA CASTILLA"
+},
+{
+"zona": "99",
+"puesto": "25",
+"nombre": "LA ELVIRA"
+},
+{
+"zona": "99",
+"puesto": "26",
+"nombre": "LA ELVIRA KILOMETRO 18"
+},
+{
+"zona": "99",
+"puesto": "29",
+"nombre": "LA LEONERA"
+},
+{
+"zona": "99",
+"puesto": "33",
+"nombre": "LA PAZ"
+},
+{
+"zona": "99",
+"puesto": "37",
+"nombre": "GOLONDRINAS"
+},
+{
+"zona": "99",
+"puesto": "38",
+"nombre": "GOLONDRINAS LOS MANGOS"
+},
+{
+"zona": "99",
+"puesto": "41",
+"nombre": "LOS ANDES"
+},
+{
+"zona": "99",
+"puesto": "45",
+"nombre": "VILLA CARMELO FONDA"
+},
+{
+"zona": "99",
+"puesto": "46",
+"nombre": "VILLACARMELO CABECERA"
+},
+{
+"zona": "99",
+"puesto": "47",
+"nombre": "MONTEBELLO"
+},
+{
+"zona": "99",
+"puesto": "48",
+"nombre": "MONTEBELLO CAMPOALEGRE"
+},
+{
+"zona": "99",
+"puesto": "49",
+"nombre": "NAVARRO"
+},
+{
+"zona": "99",
+"puesto": "53",
+"nombre": "PANCE LA VORAGINE"
+},
+{
+"zona": "99",
+"puesto": "54",
+"nombre": "PANCE LA VIGA"
+},
+{
+"zona": "99",
+"puesto": "57",
+"nombre": "PICHINDE"
+},
+{
+"zona": "99",
+"puesto": "65",
+"nombre": "EL SALADITO"
+}
+]

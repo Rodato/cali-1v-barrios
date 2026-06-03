@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El mapa de Cali, barrio por barrio — Primera vuelta 2026</title>
+<meta name="description" content="Resultados oficiales de la primera vuelta presidencial de 2026 en Cali, comuna por comuna.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Arima:wght@400;500;700&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root{
+    --abe:#e4572e;      /* Abelardo */
+    --cep:#138086;      /* Cepeda */
+    --ink:#1a1a1a;
+    --paper:#f7f4ee;
+    --muted:#5b5b5b;
+    --line:#e2ddd2;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink);font-family:'Arima',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .mono{font-family:'DM Mono',monospace}
+  h1,h2,h3{font-family:'Syne',sans-serif;line-height:1.05;margin:0}
+
+  .banner{background:#13403f;color:#bfe5e2;font-family:'DM Mono',monospace;font-size:12px;text-align:center;padding:8px 16px;letter-spacing:.02em}
+  .banner b{color:#fff}
+
+  header{padding:56px 0 28px}
+  .kicker{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cep);margin-bottom:18px}
+  h1{font-size:clamp(34px,6vw,58px);font-weight:800;letter-spacing:-.02em}
+  h1 .em{font-style:normal;background:linear-gradient(transparent 62%, #bfe5e2 62%)}
+  .dek{font-size:19px;line-height:1.55;color:var(--muted);margin-top:22px;max-width:640px}
+  .dek b{color:var(--ink)}
+
+  .scoreline{display:flex;gap:0;margin:34px 0 8px;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-family:'Syne',sans-serif}
+  .scoreline .seg{padding:16px 18px;flex:1}
+  .scoreline .cep{background:#e1f0ef;border-right:1px solid var(--line)}
+  .scoreline .abe{background:#fbe9e2}
+  .scoreline .n{font-size:30px;font-weight:800;display:block;line-height:1}
+  .scoreline .abe .n{color:var(--abe)} .scoreline .cep .n{color:var(--cep)}
+  .scoreline .lbl{font-size:13px;color:var(--muted);font-family:'Arima';margin-top:6px}
+  .citybar{font-family:'DM Mono',monospace;font-size:13px;color:var(--muted);margin:14px 0 2px}
+  .citybar b{color:var(--cep)} .citybar .a{color:var(--abe)}
+
+  .legend{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:22px 0 10px;font-size:13px;color:var(--muted)}
+  .legend .grad{height:12px;width:150px;border-radius:6px}
+  .legend .gabe{background:linear-gradient(90deg,#f6c9b8,var(--abe))}
+  .legend .gcep{background:linear-gradient(90deg,#b7dcda,var(--cep))}
+  .legend .dot{display:inline-block;width:11px;height:11px;border:1px dashed #999;border-radius:2px;vertical-align:-1px;margin-right:5px}
+
+  #map{height:78vh;min-height:520px;width:100%;border:1px solid var(--line);border-radius:14px;background:#eceae3;margin:8px 0 4px}
+  .leaflet-container{background:#eceae3;font-family:'Arima',sans-serif}
+  .tip{font-family:'Arima',sans-serif}
+  .tip .bn{font-family:'Syne';font-weight:700;font-size:15px}
+  .tip .cm{color:#888;font-size:11px;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em}
+  .tip .bars{margin-top:8px;width:210px}
+  .tip .row{display:flex;align-items:center;gap:8px;margin:3px 0;font-size:12px}
+  .tip .row .name{width:64px} .tip .row .bar{height:8px;border-radius:4px} .tip .row .v{font-family:'DM Mono';color:#444}
+  .capnote{font-size:12.5px;color:var(--muted);margin:6px 0 0}
+
+  section.tables{padding:46px 0 10px}
+  h2{font-size:26px;font-weight:700;margin-bottom:4px}
+  .sub{color:var(--muted);font-size:15px;margin:6px 0 22px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  .col h3{font-size:15px;font-family:'DM Mono';text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .col h3 .chip{width:10px;height:10px;border-radius:2px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  td{padding:9px 4px;border-bottom:1px solid var(--line);vertical-align:middle}
+  td.b{font-weight:500;font-size:13px}
+  td.pct{text-align:right;font-family:'DM Mono';white-space:nowrap}
+  .barcell{width:34%}
+  .minibar{height:9px;border-radius:5px}
+
+  footer{padding:48px 0 80px;border-top:1px solid var(--line);margin-top:40px;color:var(--muted);font-size:13.5px;line-height:1.6}
+  footer h3{font-size:14px;font-family:'DM Mono';text-transform:uppercase;letter-spacing:.1em;color:var(--ink);margin-bottom:10px}
+  footer a{color:var(--cep)}
+  .loading{padding:60px 0;text-align:center;color:var(--muted);font-family:'DM Mono'}
+</style>
+</head>
+<body>
+<div class="banner">Datos oficiales · <b>Escrutinio Registraduría Nacional</b> · Presidencial 1ª vuelta, 31 de mayo de 2026</div>
+
+<div class="wrap">
+  <header>
+    <div class="kicker">Elecciones 2026 · Primera vuelta · Cali</div>
+    <h1>El mapa de Cali, <span class="em">barrio por barrio</span></h1>
+    <p class="dek">Cómo votó Cali en la primera vuelta presidencial del 31 de mayo de 2026. <b>Iván Cepeda ganó la ciudad con holgura</b>, pero Abelardo de la Espriella se impuso en el cinturón de barrios más pudientes. Pasa el cursor sobre un barrio para ver el detalle.</p>
+
+    <div class="citybar" id="cityBar">—</div>
+
+    <div class="scoreline">
+      <div class="seg cep"><span class="n" id="cepN">—</span><div class="lbl">barrios en comunas que ganó <b>Cepeda</b></div></div>
+      <div class="seg abe"><span class="n" id="abeN">—</span><div class="lbl">barrios en comunas que ganó <b>Abelardo</b></div></div>
+    </div>
+
+    <div class="legend">
+      <span style="margin-left:0"><b style="color:var(--cep)">Cepeda</b></span><span class="grad gcep"></span>
+      <span style="margin-left:6px"><b style="color:var(--abe)">Abelardo</b></span><span class="grad gabe"></span>
+      <span style="margin-left:auto"><span class="dot"></span>tendencia de comuna (barrio sin puesto)</span>
+    </div>
+  </header>
+</div>
+
+<div class="wrap">
+  <div id="map"><div class="loading" id="mapLoading">Cargando mapa de Cali…</div></div>
+  <p class="capnote">117 barrios tienen al menos un puesto de votación geolocalizado y muestran su <b>resultado directo</b>; los demás (borde punteado) se colorean por la <b>tendencia de su comuna</b>. Color = ganador; intensidad = margen.</p>
+</div>
+
+<div class="wrap">
+  <section class="tables">
+    <h2>Los extremos de cada lado</h2>
+    <p class="sub">Los puestos de votación donde cada candidato sacó su mayor porcentaje (de 216 puestos en Cali).</p>
+    <div class="grid">
+      <div class="col">
+        <h3><span class="chip" style="background:var(--cep)"></span>Puestos más Cepeda</h3>
+        <table id="tCep"></table>
+      </div>
+      <div class="col">
+        <h3><span class="chip" style="background:var(--abe)"></span>Puestos más Abelardo</h3>
+        <table id="tAbe"></table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <footer>
+    <h3>Metodología y fuentes</h3>
+    <p><b>Resultados:</b> escrutinio oficial de la <a href="https://escrutiniospresidente2026.registraduria.gov.co/publicadas" target="_blank" rel="noopener">Registraduría Nacional del Estado Civil</a> — primera vuelta presidencial, 31 de mayo de 2026 (archivos publicados por mesa). Cali: 216 puestos, 5.158 mesas, 1.056.380 votos válidos.</p>
+    <p><b>Granularidad:</b> el escrutinio georreferencia cada puesto a su comuna, no a su barrio. Para bajar a barrio, los 216 puestos se geolocalizaron cruzándolos con la capa de <a href="https://ws-idesc.cali.gov.co/geoserver" target="_blank" rel="noopener">establecimientos educativos de IDESC</a> y geocodificación (OpenStreetMap). 117 barrios contienen al menos un puesto y muestran su resultado directo (validado por comuna); los 222 restantes heredan la tendencia de su comuna. Es una aproximación —no un conteo barrio a barrio— en la línea del mapa de Bogotá que lo inspira.</p>
+    <p><b>Geometría:</b> <a href="https://datos.cali.gov.co/dataset/capa-de-barrios-de-santiago-de-cali" target="_blank" rel="noopener">Capa de Barrios y Sectores — IDESC / Alcaldía de Santiago de Cali</a> (339 barrios, 22 comunas, vía WFS reproyectada a WGS84).</p>
+    <p style="margin-top:18px;font-size:12px;color:#999">Inspirado en el mapa de Bogotá de Ricardo Ruiz. Hecho por Estudio Plural.</p>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+const ABE='#e4572e', CEP='#138086';
+const shade=(hex,t)=>{const c=parseInt(hex.slice(1),16),r=c>>16,g=(c>>8)&255,b=c&255,m=v=>Math.round(255-(255-v)*t);return `rgb(${m(r)},${m(g)},${m(b)})`;};
+const intensity=m=>Math.max(0.22,Math.min(1,0.22+m*1.7));
+const pct=n=>(n*100).toFixed(1)+'%';
+const fmt=n=>n.toLocaleString('es-CO');
+
+Promise.all([
+  fetch('data/barrios.geojson').then(r=>r.json()),
+  fetch('data/resultados.json').then(r=>r.json()),
+  fetch('data/puestos_resultados.json').then(r=>r.json())
+]).then(([geo,res,puestos])=>{
+  const R=res.barrios, M=res._meta;
+  document.getElementById('mapLoading').remove();
+
+  // headline ciudad
+  const c=M.ciudad.pct;
+  document.getElementById('cityBar').innerHTML=
+    `Cali: <b>Cepeda ${pct(c.Cepeda)}</b> · <span class="a">Abelardo ${pct(c.Abelardo)}</span> · Paloma ${pct(c.Paloma)} · Fajardo ${pct(c.Fajardo)}`;
+  document.getElementById('cepN').textContent=M.ciudad.cepeda_barrios;
+  document.getElementById('abeN').textContent=M.ciudad.abelardo_barrios;
+
+  const map=L.map('map',{zoomControl:true,attributionControl:false,scrollWheelZoom:false}).setView([3.42,-76.53],12);
+  L.control.attribution({prefix:false}).addAttribution('Barrios: IDESC Cali · Resultados: escrutinio Registraduría 2026').addTo(map);
+
+  function style(f){
+    const d=R[f.properties.id];
+    if(!d) return {fillColor:'#ddd',weight:.4,color:'#fff',fillOpacity:.7};
+    const base=d.ganador==='Cepeda'?CEP:ABE;
+    const inf=d.nivel==='inferido';
+    return {fillColor:shade(base,intensity(d.margen)),
+      weight:inf?0.8:0.5, color:inf?'#8a8a8a':'#ffffff',
+      dashArray:inf?'2,2':null, fillOpacity:inf?0.62:0.95};
+  }
+  function tipHTML(f){
+    const p=f.properties,d=R[p.id];
+    if(!d) return `<div class="tip"><div class="bn">${p.barrio}</div><div class="cm">Sin datos</div></div>`;
+    const rows=[['Cepeda',d.pct.Cepeda,CEP],['Abelardo',d.pct.Abelardo,ABE],
+      ['Paloma',d.pct.Paloma,'#9b8cf0'],['Fajardo',d.pct.Fajardo,'#caa24a']];
+    const bars=rows.map(([n,v,col])=>`<div class="row"><span class="name">${n}</span>
+      <span class="bar" style="width:${Math.max(2,v*130)}px;background:${col}"></span>
+      <span class="v">${pct(v)}</span></div>`).join('');
+    const tag=d.nivel==='directo'
+      ? `${d.npuestos} puesto${d.npuestos>1?'s':''} · ${fmt(d.total)} votos`
+      : `tendencia de comuna`;
+    return `<div class="tip"><div class="bn">${p.barrio}</div>
+      <div class="cm">${d.comnom} · ${tag}</div>
+      <div class="bars">${bars}</div></div>`;
+  }
+  const layer=L.geoJSON(geo,{style,onEachFeature:(f,lyr)=>{
+    lyr.bindTooltip(tipHTML(f),{sticky:true,direction:'top',opacity:1});
+    lyr.on('mouseover',()=>lyr.setStyle({weight:1.6,color:'#1a1a1a'}));
+    lyr.on('mouseout',()=>layer.resetStyle(lyr));
+  }}).addTo(map);
+  map.fitBounds(layer.getBounds(),{padding:[12,12]});
+
+  // tablas de extremos por PUESTO (datos reales)
+  const arr=Object.values(puestos).map(d=>{
+    const valid=d.total-(d.votos.NoValidos||0)||1;
+    return {nombre:d.nombre,comnom:d.comnom,total:d.total,
+            cep:d.votos.Cepeda/valid, abe:d.votos.Abelardo/valid};
+  });
+  function fill(tid,key,color){
+    const rows=[...arr].sort((a,b)=>b[key]-a[key]).slice(0,8);
+    document.getElementById(tid).innerHTML=rows.map(r=>`<tr>
+      <td class="b">${r.nombre}<div style="font-size:11px;color:#999;font-family:DM Mono">${r.comnom}</div></td>
+      <td class="barcell"><div class="minibar" style="width:${r[key]*100}%;background:${color}"></div></td>
+      <td class="pct">${pct(r[key])}</td></tr>`).join('');
+  }
+  fill('tCep','cep',CEP);
+  fill('tAbe','abe',ABE);
+}).catch(e=>{
+  document.getElementById('map').innerHTML='<div class="loading">Error cargando datos: '+e.message+'</div>';
+  console.error(e);
+});
+</script>
+</body>
+</html>
