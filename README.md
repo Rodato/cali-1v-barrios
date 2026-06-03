@@ -39,4 +39,4 @@ data/
 
 Datos oficiales y abiertos de la Registraduría Nacional e IDESC. Código bajo MIT.
 
-Hecho por [Estudio Plural](https://plural-estudio.co) con [Claude Code](https://claude.com/claude-code).
+Hecho por [Daniel Otero](https://danielotero.dev/) con [Claude Code](https://claude.com/claude-code).
