@@ -4,7 +4,7 @@ Mapa interactivo de los resultados de la **primera vuelta presidencial de Colomb
 
 🔗 **En vivo:** https://cali-1v-barrios.vercel.app
 
-Inspirado en el [mapa de Bogotá de Ricardo Ruiz](https://ricardoruiz.co/bogota-1v-barrios.html).
+Inspirado en el [mapa de Bogotá de Ricardo Ruiz](https://x.com/RicardoRuiz_/status/2061968087369265423).
 
 ## Qué muestra
 
