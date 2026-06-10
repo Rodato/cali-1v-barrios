@@ -1,0 +1,764 @@
+{
+ "_meta": {
+  "descripcion": "Mapeo puesto de votación → barrio (2026-1V), reconstruido por coincidencia exacta de totales y porcentajes desde resultados.json. Cubre los 151 puestos geolocalizados a un barrio; los 65 restantes (algunos urbanos sin geolocalizar + rurales/corregimientos) no aportan a ningún barrio directo.",
+  "n_puestos_mapeados": 151,
+  "n_barrios_directos": 117
+ },
+ "puestos": {
+  "01-02": {
+   "barrio_id": "0101",
+   "puesto_nombre": "IE JOSE HOLGUIN GARCES",
+   "comuna_oficial": "001"
+  },
+  "01-03": {
+   "barrio_id": "0101",
+   "puesto_nombre": "IE JOSE CELESTINO MUTIS",
+   "comuna_oficial": "001"
+  },
+  "01-08": {
+   "barrio_id": "0101",
+   "puesto_nombre": "IE ISAIAS GAMBOA",
+   "comuna_oficial": "001"
+  },
+  "01-01": {
+   "barrio_id": "0102",
+   "puesto_nombre": "ESC. JOSE ACEVEDO Y GOMEZ",
+   "comuna_oficial": "001"
+  },
+  "01-06": {
+   "barrio_id": "0102",
+   "puesto_nombre": "SEDE MARICE SINISTERRA TERRON",
+   "comuna_oficial": "001"
+  },
+  "01-05": {
+   "barrio_id": "0196",
+   "puesto_nombre": "IE CECILIA CABALLERO",
+   "comuna_oficial": "001"
+  },
+  "01-09": {
+   "barrio_id": "0196",
+   "puesto_nombre": "IE LUIS FERNANDO CAICEDO",
+   "comuna_oficial": "001"
+  },
+  "01-04": {
+   "barrio_id": "0199",
+   "puesto_nombre": "COLISEO BAJO AGUACATAL",
+   "comuna_oficial": "001"
+  },
+  "01-07": {
+   "barrio_id": "0199",
+   "puesto_nombre": "COL SANTA ISABEL DE HUNGRIA AGUACATAL",
+   "comuna_oficial": "001"
+  },
+  "02-03": {
+   "barrio_id": "0206",
+   "puesto_nombre": "C.A.M.",
+   "comuna_oficial": "002"
+  },
+  "03-02": {
+   "barrio_id": "0207",
+   "puesto_nombre": "IE SANTA CECILIA",
+   "comuna_oficial": "002"
+  },
+  "02-06": {
+   "barrio_id": "0211",
+   "puesto_nombre": "COLEGIO HISPANOAMERICANO",
+   "comuna_oficial": "002"
+  },
+  "03-04": {
+   "barrio_id": "0219",
+   "puesto_nombre": "ESCUELA BRISAS DE LOS ALAMOS",
+   "comuna_oficial": "002"
+  },
+  "04-02": {
+   "barrio_id": "0303",
+   "puesto_nombre": "ESCUELA CARLOS A SARDI",
+   "comuna_oficial": "003"
+  },
+  "04-04": {
+   "barrio_id": "0305",
+   "puesto_nombre": "IE NORMAL SUPERIOR LOS FARALLONES",
+   "comuna_oficial": "003"
+  },
+  "04-03": {
+   "barrio_id": "0306",
+   "puesto_nombre": "IE SANTA LIBRADA",
+   "comuna_oficial": "003"
+  },
+  "04-01": {
+   "barrio_id": "0311",
+   "puesto_nombre": "ASAMBLEA DEPARTAMENTAL",
+   "comuna_oficial": "003"
+  },
+  "04-07": {
+   "barrio_id": "0311",
+   "puesto_nombre": "CENTRO COMERCIAL GRAN COMERCIO",
+   "comuna_oficial": "003"
+  },
+  "04-05": {
+   "barrio_id": "0312",
+   "puesto_nombre": "ESCUELA REPUBLICA DE MEXICO",
+   "comuna_oficial": "003"
+  },
+  "05-05": {
+   "barrio_id": "0401",
+   "puesto_nombre": "IE CASD SEDE SANTO TOMAS",
+   "comuna_oficial": "004"
+  },
+  "05-01": {
+   "barrio_id": "0402",
+   "puesto_nombre": "SEDE MANUELA BELTRAN",
+   "comuna_oficial": "004"
+  },
+  "05-08": {
+   "barrio_id": "0404",
+   "puesto_nombre": "IE LA MERCED",
+   "comuna_oficial": "004"
+  },
+  "05-06": {
+   "barrio_id": "0406",
+   "puesto_nombre": "SEDE SAN VICENTE DE PAUL",
+   "comuna_oficial": "004"
+  },
+  "05-02": {
+   "barrio_id": "0410",
+   "puesto_nombre": "IE JOSE ANTONIO GALAN",
+   "comuna_oficial": "004"
+  },
+  "05-03": {
+   "barrio_id": "0412",
+   "puesto_nombre": "ESCUELA RAFAEL ZAMORANO",
+   "comuna_oficial": "004"
+  },
+  "06-01": {
+   "barrio_id": "0501",
+   "puesto_nombre": "SENA",
+   "comuna_oficial": "005"
+  },
+  "06-04": {
+   "barrio_id": "0501",
+   "puesto_nombre": "ESCUELA MARIA PANESSO",
+   "comuna_oficial": "005"
+  },
+  "06-05": {
+   "barrio_id": "0501",
+   "puesto_nombre": "ESCUELA MARIO LLOREDA",
+   "comuna_oficial": "005"
+  },
+  "06-06": {
+   "barrio_id": "0501",
+   "puesto_nombre": "IE SIMON RODRIGUEZ",
+   "comuna_oficial": "005"
+  },
+  "06-02": {
+   "barrio_id": "0503",
+   "puesto_nombre": "IE CELMIRA BUENO DE OREJUELA",
+   "comuna_oficial": "005"
+  },
+  "06-03": {
+   "barrio_id": "0503",
+   "puesto_nombre": "ESCUELA MARIANO OSPINA PEREZ",
+   "comuna_oficial": "005"
+  },
+  "08-02": {
+   "barrio_id": "0602",
+   "puesto_nombre": "IE PEDRO ANTONIO MOLINA",
+   "comuna_oficial": "006"
+  },
+  "07-03": {
+   "barrio_id": "0603",
+   "puesto_nombre": "ESCUELA PABLO EMILIO CAICEDO",
+   "comuna_oficial": "006"
+  },
+  "08-03": {
+   "barrio_id": "0607",
+   "puesto_nombre": "ESCUELA TRES DE JULIO",
+   "comuna_oficial": "006"
+  },
+  "08-01": {
+   "barrio_id": "0609",
+   "puesto_nombre": "ESCUELA SAN JORGE",
+   "comuna_oficial": "006"
+  },
+  "07-02": {
+   "barrio_id": "0610",
+   "puesto_nombre": "ESCUELA LAS AMERICAS",
+   "comuna_oficial": "006"
+  },
+  "07-05": {
+   "barrio_id": "0610",
+   "puesto_nombre": "SEDE CECILIA MUÑOZ RICAURTE",
+   "comuna_oficial": "006"
+  },
+  "08-04": {
+   "barrio_id": "0612",
+   "puesto_nombre": "ESCUELA ATANASIO GIRARDOT",
+   "comuna_oficial": "006"
+  },
+  "08-06": {
+   "barrio_id": "0696",
+   "puesto_nombre": "SEDE LOS VENCEDORES",
+   "comuna_oficial": "006"
+  },
+  "07-04": {
+   "barrio_id": "0697",
+   "puesto_nombre": "SANTA ISABEL DE HUNGRIA CALIMIO NORTE",
+   "comuna_oficial": "006"
+  },
+  "09-07": {
+   "barrio_id": "0701",
+   "puesto_nombre": "SEDE CENTRAL PROVIVIENDA",
+   "comuna_oficial": "007"
+  },
+  "09-02": {
+   "barrio_id": "0702",
+   "puesto_nombre": "ESCUELA LOS FARALLONES",
+   "comuna_oficial": "007"
+  },
+  "09-03": {
+   "barrio_id": "0703",
+   "puesto_nombre": "IE VICENTE BORRERO COSTA",
+   "comuna_oficial": "007"
+  },
+  "09-06": {
+   "barrio_id": "0703",
+   "puesto_nombre": "IE ALFONSO LOPEZ PUMAREJO",
+   "comuna_oficial": "007"
+  },
+  "09-04": {
+   "barrio_id": "0705",
+   "puesto_nombre": "ESCUELA MANUEL MARIA MALLARINO",
+   "comuna_oficial": "007"
+  },
+  "10-01": {
+   "barrio_id": "0705",
+   "puesto_nombre": "IE MANUEL MARIA MALLARINO CEIBAS",
+   "comuna_oficial": "007"
+  },
+  "09-05": {
+   "barrio_id": "0706",
+   "puesto_nombre": "IE JUAN BAUTISTA DE LA SALLE",
+   "comuna_oficial": "007"
+  },
+  "10-03": {
+   "barrio_id": "0707",
+   "puesto_nombre": "ESCUELA ANA MARIA VERNAZA",
+   "comuna_oficial": "007"
+  },
+  "10-04": {
+   "barrio_id": "0707",
+   "puesto_nombre": "IE SIETE DE AGOSTO",
+   "comuna_oficial": "007"
+  },
+  "10-02": {
+   "barrio_id": "0709",
+   "puesto_nombre": "ESCUELA CARLOS HOLGUIN SARDI",
+   "comuna_oficial": "007"
+  },
+  "11-05": {
+   "barrio_id": "0801",
+   "puesto_nombre": "IE EVARISTO GARCIA",
+   "comuna_oficial": "008"
+  },
+  "11-01": {
+   "barrio_id": "0804",
+   "puesto_nombre": "ESCUELA MANUEL REBOLLEDO",
+   "comuna_oficial": "008"
+  },
+  "11-04": {
+   "barrio_id": "0807",
+   "puesto_nombre": "IE BENJAMIN HERRERA",
+   "comuna_oficial": "008"
+  },
+  "11-02": {
+   "barrio_id": "0811",
+   "puesto_nombre": "INST TEC COMERCIAL LAS AMERICAS",
+   "comuna_oficial": "008"
+  },
+  "12-04": {
+   "barrio_id": "0814",
+   "puesto_nombre": "IE ALBERTO CARVAJAL BORRERO",
+   "comuna_oficial": "008"
+  },
+  "12-01": {
+   "barrio_id": "0815",
+   "puesto_nombre": "COLEGIO LEON DE GREIFF",
+   "comuna_oficial": "008"
+  },
+  "13-01": {
+   "barrio_id": "0901",
+   "puesto_nombre": "ESCUELA MARCO FIDEL SUAREZ",
+   "comuna_oficial": "009"
+  },
+  "13-04": {
+   "barrio_id": "0903",
+   "puesto_nombre": "ESCUELA OLGA LUCIA LLOREDA",
+   "comuna_oficial": "009"
+  },
+  "13-05": {
+   "barrio_id": "0903",
+   "puesto_nombre": "IE ANTONIO JOSE CAMACHO",
+   "comuna_oficial": "009"
+  },
+  "13-06": {
+   "barrio_id": "0904",
+   "puesto_nombre": "IE GENERAL ALFREDO VASQUEZ COBO",
+   "comuna_oficial": "009"
+  },
+  "13-02": {
+   "barrio_id": "0908",
+   "puesto_nombre": "ESC NUESTRA SEÑORA DE LOS REMEDIOS",
+   "comuna_oficial": "009"
+  },
+  "13-03": {
+   "barrio_id": "0909",
+   "puesto_nombre": "IE REPUBLICA DE ARGENTINA",
+   "comuna_oficial": "009"
+  },
+  "14-04": {
+   "barrio_id": "1002",
+   "puesto_nombre": "IE CARLOS HOLGUIN LLOREDA",
+   "comuna_oficial": "010"
+  },
+  "14-01": {
+   "barrio_id": "1002",
+   "puesto_nombre": "SEDE REPUBLICA DE COSTA RICA",
+   "comuna_oficial": "010"
+  },
+  "15-04": {
+   "barrio_id": "1004",
+   "puesto_nombre": "ESCUELA GENERAL CARLOS ALBAN",
+   "comuna_oficial": "010"
+  },
+  "14-03": {
+   "barrio_id": "1008",
+   "puesto_nombre": "IE NORMAL SUPERIOR SANTIAGO",
+   "comuna_oficial": "010"
+  },
+  "99-21": {
+   "barrio_id": "1009",
+   "puesto_nombre": "LA CASTILLA",
+   "comuna_oficial": "026"
+  },
+  "15-02": {
+   "barrio_id": "1009",
+   "puesto_nombre": "ESCUELA SAN ROQUE",
+   "comuna_oficial": "010"
+  },
+  "14-05": {
+   "barrio_id": "1010",
+   "puesto_nombre": "IE JOSE MARIA VIVAS BALCAZAR",
+   "comuna_oficial": "010"
+  },
+  "15-03": {
+   "barrio_id": "1013",
+   "puesto_nombre": "IE RAFAEL NAVIA VARON",
+   "comuna_oficial": "010"
+  },
+  "14-02": {
+   "barrio_id": "1017",
+   "puesto_nombre": "ESCUELA FERNANDO VELASCO",
+   "comuna_oficial": "010"
+  },
+  "16-04": {
+   "barrio_id": "1101",
+   "puesto_nombre": "ESCUELA SUSANA VINASCO DE QUINTANA",
+   "comuna_oficial": "011"
+  },
+  "17-01": {
+   "barrio_id": "1107",
+   "puesto_nombre": "ESCUELA JOSE VICENTE CONCHA",
+   "comuna_oficial": "011"
+  },
+  "98-01": {
+   "barrio_id": "1112",
+   "puesto_nombre": "CARCEL VILLANUEVA",
+   "comuna_oficial": "000"
+  },
+  "17-02": {
+   "barrio_id": "1112",
+   "puesto_nombre": "IE CIUDAD DE CALI",
+   "comuna_oficial": "011"
+  },
+  "16-05": {
+   "barrio_id": "1113",
+   "puesto_nombre": "IE VILLA DEL SUR",
+   "comuna_oficial": "011"
+  },
+  "16-02": {
+   "barrio_id": "1113",
+   "puesto_nombre": "IE CIUDAD MODELO",
+   "comuna_oficial": "011"
+  },
+  "16-03": {
+   "barrio_id": "1114",
+   "puesto_nombre": "ESCUELA  MARINO RENGIFO SALCEDO",
+   "comuna_oficial": "011"
+  },
+  "16-01": {
+   "barrio_id": "1115",
+   "puesto_nombre": "IE AGUSTIN NIETO CABALLERO",
+   "comuna_oficial": "011"
+  },
+  "18-03": {
+   "barrio_id": "1207",
+   "puesto_nombre": "IE HERNANDO NAVIA VARON",
+   "comuna_oficial": "012"
+  },
+  "18-04": {
+   "barrio_id": "1207",
+   "puesto_nombre": "ESCUELA FENALCO ASTURIAS",
+   "comuna_oficial": "012"
+  },
+  "18-05": {
+   "barrio_id": "1207",
+   "puesto_nombre": "IE JULIO DE CAICEDO Y TELLEZ",
+   "comuna_oficial": "012"
+  },
+  "18-02": {
+   "barrio_id": "1210",
+   "puesto_nombre": "IE MARICE SINISTERRA",
+   "comuna_oficial": "012"
+  },
+  "18-01": {
+   "barrio_id": "1211",
+   "puesto_nombre": "IE JUAN XXIII SEDE CIUDAD DE CALI",
+   "comuna_oficial": "012"
+  },
+  "20-06": {
+   "barrio_id": "1301",
+   "puesto_nombre": "SEDE ENRIQUE OLAYA HERRERA",
+   "comuna_oficial": "013"
+  },
+  "19-02": {
+   "barrio_id": "1302",
+   "puesto_nombre": "IE EL DIAMANTE",
+   "comuna_oficial": "013"
+  },
+  "19-03": {
+   "barrio_id": "1303",
+   "puesto_nombre": "ESCUELA RODRIGO LLOREDA",
+   "comuna_oficial": "013"
+  },
+  "20-07": {
+   "barrio_id": "1303",
+   "puesto_nombre": "IE LUZ HAYDEE GUERRERO MOLINA",
+   "comuna_oficial": "013"
+  },
+  "19-04": {
+   "barrio_id": "1305",
+   "puesto_nombre": "ESCUELA MIGUEL CAMACHO PEREA",
+   "comuna_oficial": "013"
+  },
+  "20-03": {
+   "barrio_id": "1309",
+   "puesto_nombre": "IE BARTOLOME LOBOGUERRERO",
+   "comuna_oficial": "013"
+  },
+  "20-02": {
+   "barrio_id": "1395",
+   "puesto_nombre": "COLEGIO PANAMERICANO LOS LAGOS",
+   "comuna_oficial": "013"
+  },
+  "20-05": {
+   "barrio_id": "1397",
+   "puesto_nombre": "IE JESUS VILLAFAÑE FRANCO",
+   "comuna_oficial": "013"
+  },
+  "21-05": {
+   "barrio_id": "1401",
+   "puesto_nombre": "IE LLANO VERDE SEDE BARTOLOME MITRE",
+   "comuna_oficial": "014"
+  },
+  "22-05": {
+   "barrio_id": "1401",
+   "puesto_nombre": "IE NUEVO LATIR",
+   "comuna_oficial": "014"
+  },
+  "22-04": {
+   "barrio_id": "1403",
+   "puesto_nombre": "IE ELIAS SALAZAR GARCIA",
+   "comuna_oficial": "014"
+  },
+  "22-02": {
+   "barrio_id": "1404",
+   "puesto_nombre": "IE GABRIELA MISTRAL",
+   "comuna_oficial": "014"
+  },
+  "21-03": {
+   "barrio_id": "1405",
+   "puesto_nombre": "ESCUELA RAUL SILVA HOLGUIN",
+   "comuna_oficial": "014"
+  },
+  "21-04": {
+   "barrio_id": "1406",
+   "puesto_nombre": "IE MONSEÑOR RAMON ARCILA",
+   "comuna_oficial": "014"
+  },
+  "21-01": {
+   "barrio_id": "1499",
+   "puesto_nombre": "IE LA ANUNCIACION",
+   "comuna_oficial": "014"
+  },
+  "21-02": {
+   "barrio_id": "1499",
+   "puesto_nombre": "SEDE PUERTA DEL SOL",
+   "comuna_oficial": "014"
+  },
+  "23-04": {
+   "barrio_id": "1502",
+   "puesto_nombre": "IE GABRIEL GARCIA MARQUEZ",
+   "comuna_oficial": "015"
+  },
+  "23-03": {
+   "barrio_id": "1503",
+   "puesto_nombre": "ESCUELA JOSE RAMON BEJARANO",
+   "comuna_oficial": "015"
+  },
+  "23-06": {
+   "barrio_id": "1503",
+   "puesto_nombre": "IE CARLOS HOLGUIN MALLARINO",
+   "comuna_oficial": "015"
+  },
+  "23-02": {
+   "barrio_id": "1504",
+   "puesto_nombre": "ESCUELA OLAYA HERRERA",
+   "comuna_oficial": "015"
+  },
+  "23-01": {
+   "barrio_id": "1596",
+   "puesto_nombre": "IE CUDAD CORDOBA",
+   "comuna_oficial": "015"
+  },
+  "23-05": {
+   "barrio_id": "1598",
+   "puesto_nombre": "IE ISAIAS DUARTE CANCINO",
+   "comuna_oficial": "015"
+  },
+  "23-08": {
+   "barrio_id": "1599",
+   "puesto_nombre": "IE LLANO VERDE",
+   "comuna_oficial": "015"
+  },
+  "24-02": {
+   "barrio_id": "1601",
+   "puesto_nombre": "IE CRISTOBAL COLON",
+   "comuna_oficial": "016"
+  },
+  "24-03": {
+   "barrio_id": "1602",
+   "puesto_nombre": "IE CARLOS HOLMES TRUJILLO",
+   "comuna_oficial": "016"
+  },
+  "24-05": {
+   "barrio_id": "1603",
+   "puesto_nombre": "SEDE CRISTO MAESTRO",
+   "comuna_oficial": "016"
+  },
+  "24-07": {
+   "barrio_id": "1603",
+   "puesto_nombre": "SEDE ANGELICA SIERRA",
+   "comuna_oficial": "016"
+  },
+  "24-04": {
+   "barrio_id": "1604",
+   "puesto_nombre": "ESCUELA PABLO NERUDA",
+   "comuna_oficial": "016"
+  },
+  "26-01": {
+   "barrio_id": "1702",
+   "puesto_nombre": "ESCUELA LUIS CARLOS ROJAS",
+   "comuna_oficial": "017"
+  },
+  "26-02": {
+   "barrio_id": "1778",
+   "puesto_nombre": "CVC",
+   "comuna_oficial": "017"
+  },
+  "25-03": {
+   "barrio_id": "1784",
+   "puesto_nombre": "COLEGIO REYES CATOLICOS",
+   "comuna_oficial": "017"
+  },
+  "26-04": {
+   "barrio_id": "1786",
+   "puesto_nombre": "IETI COMUNA 17",
+   "comuna_oficial": "017"
+  },
+  "27-07": {
+   "barrio_id": "1802",
+   "puesto_nombre": "SEDE JHON F KENNEDY",
+   "comuna_oficial": "018"
+  },
+  "28-02": {
+   "barrio_id": "1804",
+   "puesto_nombre": "COLEGIO AMERICANO",
+   "comuna_oficial": "018"
+  },
+  "27-03": {
+   "barrio_id": "1808",
+   "puesto_nombre": "IE JUAN PABLO II",
+   "comuna_oficial": "018"
+  },
+  "27-01": {
+   "barrio_id": "1811",
+   "puesto_nombre": "ESCUELA ALVARO ESCOBAR NAVIA",
+   "comuna_oficial": "018"
+  },
+  "27-04": {
+   "barrio_id": "1811",
+   "puesto_nombre": "ESCUELA PORTETE DE TARQUI",
+   "comuna_oficial": "018"
+  },
+  "27-06": {
+   "barrio_id": "1813",
+   "puesto_nombre": "SEDE CELIMO RUEDA",
+   "comuna_oficial": "018"
+  },
+  "27-05": {
+   "barrio_id": "1813",
+   "puesto_nombre": "UNIVERSIDAD COOPERATIVA",
+   "comuna_oficial": "018"
+  },
+  "28-06": {
+   "barrio_id": "1815",
+   "puesto_nombre": "SEDE EDUARDO RIASCOS GRUESO",
+   "comuna_oficial": "018"
+  },
+  "28-01": {
+   "barrio_id": "1815",
+   "puesto_nombre": "IE LA ESPERANZA",
+   "comuna_oficial": "018"
+  },
+  "28-03": {
+   "barrio_id": "1891",
+   "puesto_nombre": "ESC MAGDALENA ORTEGA DE NARIÑO",
+   "comuna_oficial": "018"
+  },
+  "99-17": {
+   "barrio_id": "1891",
+   "puesto_nombre": "LA BUITRERA",
+   "comuna_oficial": "025"
+  },
+  "29-01": {
+   "barrio_id": "1903",
+   "puesto_nombre": "IE EUSTAQUIO PALACIOS",
+   "comuna_oficial": "019"
+  },
+  "30-03": {
+   "barrio_id": "1905",
+   "puesto_nombre": "IE LICEO DEPARTAMENTAL",
+   "comuna_oficial": "019"
+  },
+  "29-02": {
+   "barrio_id": "1906",
+   "puesto_nombre": "INSTITUTO PARA NIÑOS CIEGOS Y SORDOS",
+   "comuna_oficial": "019"
+  },
+  "29-03": {
+   "barrio_id": "1908",
+   "puesto_nombre": "COL SANTA MARIA STELLA MARIS",
+   "comuna_oficial": "019"
+  },
+  "30-04": {
+   "barrio_id": "1909",
+   "puesto_nombre": "ESCUELA FRANCISCO JOSE DE CALDAS",
+   "comuna_oficial": "019"
+  },
+  "30-06": {
+   "barrio_id": "1913",
+   "puesto_nombre": "ESCUELA GRAN COLOMBIA",
+   "comuna_oficial": "019"
+  },
+  "30-05": {
+   "barrio_id": "1915",
+   "puesto_nombre": "ESCUELA CAMILO TORRES",
+   "comuna_oficial": "019"
+  },
+  "30-07": {
+   "barrio_id": "1917",
+   "puesto_nombre": "SEDE LOS CRISTALES",
+   "comuna_oficial": "019"
+  },
+  "29-04": {
+   "barrio_id": "1922",
+   "puesto_nombre": "ESCUELA 25 DE JULIO",
+   "comuna_oficial": "019"
+  },
+  "29-05": {
+   "barrio_id": "1994",
+   "puesto_nombre": "COLEGIO POLITECNICO",
+   "comuna_oficial": "019"
+  },
+  "29-06": {
+   "barrio_id": "1995",
+   "puesto_nombre": "IE MULTIPROPOSITO",
+   "comuna_oficial": "019"
+  },
+  "90-01": {
+   "barrio_id": "1999",
+   "puesto_nombre": "COLISEO DEL PUEBLO",
+   "comuna_oficial": "000"
+  },
+  "31-02": {
+   "barrio_id": "2003",
+   "puesto_nombre": "ESCUELA LUIS LOPEZ DE MESA",
+   "comuna_oficial": "020"
+  },
+  "31-03": {
+   "barrio_id": "2003",
+   "puesto_nombre": "IE JUANA DE CAICEDO Y CUERO",
+   "comuna_oficial": "020"
+  },
+  "31-04": {
+   "barrio_id": "2003",
+   "puesto_nombre": "SEDE SIMON BOLIVAR",
+   "comuna_oficial": "020"
+  },
+  "31-06": {
+   "barrio_id": "2004",
+   "puesto_nombre": "ESCUELA SOFIA CAMARGO",
+   "comuna_oficial": "020"
+  },
+  "31-05": {
+   "barrio_id": "2005",
+   "puesto_nombre": "SEDE ANTONIA SANTOS",
+   "comuna_oficial": "020"
+  },
+  "32-07": {
+   "barrio_id": "2103",
+   "puesto_nombre": "IE LLANO VERDE SEDE INVICALI",
+   "comuna_oficial": "021"
+  },
+  "32-03": {
+   "barrio_id": "2106",
+   "puesto_nombre": "SANTA ISABEL DE HUNGRIA SAN FELIPE",
+   "comuna_oficial": "021"
+  },
+  "32-01": {
+   "barrio_id": "2196",
+   "puesto_nombre": "SEDE NUEVO AMANECER",
+   "comuna_oficial": "021"
+  },
+  "32-06": {
+   "barrio_id": "2196",
+   "puesto_nombre": "COLEGIO POTREROGRANDE",
+   "comuna_oficial": "021"
+  },
+  "32-05": {
+   "barrio_id": "2198",
+   "puesto_nombre": "IE PROGRESANDO JUNTOS",
+   "comuna_oficial": "021"
+  },
+  "33-01": {
+   "barrio_id": "2296",
+   "puesto_nombre": "COLEGIO BENETT",
+   "comuna_oficial": "022"
+  },
+  "33-03": {
+   "barrio_id": "2296",
+   "puesto_nombre": "UNIVERSIDAD ICESI",
+   "comuna_oficial": "022"
+  }
+ }
+}

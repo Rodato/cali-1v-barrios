@@ -3,20 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>El mapa de Cali, barrio por barrio — Primera vuelta 2026</title>
-<meta name="description" content="Resultados oficiales de la primera vuelta presidencial de 2026 en Cali, comuna por comuna.">
+<title>El mapa de Cali, barrio por barrio — Presidenciales 2026 y 2022</title>
+<meta name="description" content="Resultados oficiales en Cali, barrio por barrio: primera vuelta presidencial 2026 y las dos vueltas de 2022.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Arima:wght@400;500;700&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>
   :root{
-    --abe:#e4572e;      /* Abelardo */
-    --cep:#138086;      /* Cepeda */
     --ink:#1a1a1a;
     --paper:#f7f4ee;
     --muted:#5b5b5b;
     --line:#e2ddd2;
+    --accent:#138086;
     --maxw:760px;
   }
   *{box-sizing:border-box}
@@ -29,26 +28,26 @@
   .banner b{color:#fff}
 
   header{padding:56px 0 28px}
-  .kicker{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cep);margin-bottom:18px}
+  .kicker{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
   h1{font-size:clamp(34px,6vw,58px);font-weight:800;letter-spacing:-.02em}
   h1 .em{font-style:normal;background:linear-gradient(transparent 62%, #bfe5e2 62%)}
   .dek{font-size:19px;line-height:1.55;color:var(--muted);margin-top:22px;max-width:640px}
   .dek b{color:var(--ink)}
 
-  .scoreline{display:flex;gap:0;margin:34px 0 8px;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-family:'Syne',sans-serif}
+  .selector{display:flex;gap:6px;margin:30px 0 0;border:1px solid var(--line);border-radius:10px;padding:5px;background:#efece4;width:max-content;max-width:100%;overflow-x:auto}
+  .selector button{font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.02em;border:0;background:transparent;color:var(--muted);padding:9px 14px;border-radius:7px;cursor:pointer;white-space:nowrap}
+  .selector button.active{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12);font-weight:500}
+  .selector button:hover:not(.active){color:var(--ink)}
+
+  .scoreline{display:flex;gap:0;margin:26px 0 8px;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-family:'Syne',sans-serif}
   .scoreline .seg{padding:16px 18px;flex:1}
-  .scoreline .cep{background:#e1f0ef;border-right:1px solid var(--line)}
-  .scoreline .abe{background:#fbe9e2}
+  .scoreline .seg+.seg{border-left:1px solid var(--line)}
   .scoreline .n{font-size:30px;font-weight:800;display:block;line-height:1}
-  .scoreline .abe .n{color:var(--abe)} .scoreline .cep .n{color:var(--cep)}
   .scoreline .lbl{font-size:13px;color:var(--muted);font-family:'Arima';margin-top:6px}
   .citybar{font-family:'DM Mono',monospace;font-size:13px;color:var(--muted);margin:14px 0 2px}
-  .citybar b{color:var(--cep)} .citybar .a{color:var(--abe)}
 
   .legend{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:22px 0 10px;font-size:13px;color:var(--muted)}
   .legend .grad{height:12px;width:150px;border-radius:6px}
-  .legend .gabe{background:linear-gradient(90deg,#f6c9b8,var(--abe))}
-  .legend .gcep{background:linear-gradient(90deg,#b7dcda,var(--cep))}
   .legend .dot{display:inline-block;width:11px;height:11px;border:1px dashed #999;border-radius:2px;vertical-align:-1px;margin-right:5px}
 
   #map{height:78vh;min-height:520px;width:100%;border:1px solid var(--line);border-radius:14px;background:#eceae3;margin:8px 0 4px}
@@ -75,63 +74,78 @@
   .barcell{width:34%}
   .minibar{height:9px;border-radius:5px}
 
+  section.compare{padding:36px 0 10px;border-top:1px solid var(--line);margin-top:42px}
+  .compare table{margin-top:18px}
+  .compare td,.compare th{padding:9px 6px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
+  .compare th{font-family:'DM Mono';font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:400}
+  .compare td.pct{text-align:right;font-family:'DM Mono'}
+  .compare .swatch{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:0}
+
   footer{padding:48px 0 80px;border-top:1px solid var(--line);margin-top:40px;color:var(--muted);font-size:13.5px;line-height:1.6}
   footer h3{font-size:14px;font-family:'DM Mono';text-transform:uppercase;letter-spacing:.1em;color:var(--ink);margin-bottom:10px}
-  footer a{color:var(--cep)}
+  footer a{color:var(--accent)}
   .loading{padding:60px 0;text-align:center;color:var(--muted);font-family:'DM Mono'}
 </style>
 </head>
 <body>
-<div class="banner">Datos oficiales · <b>Escrutinio Registraduría Nacional</b> · Presidencial 1ª vuelta, 31 de mayo de 2026</div>
+<div class="banner">Datos oficiales · <b>Escrutinio Registraduría Nacional</b> · <span id="bannerElec">—</span></div>
 
 <div class="wrap">
   <header>
-    <div class="kicker">Elecciones 2026 · Primera vuelta · Cali</div>
+    <div class="kicker" id="kicker">Cali · Elecciones presidenciales</div>
     <h1>El mapa de Cali, <span class="em">barrio por barrio</span></h1>
-    <p class="dek">Cómo votó Cali en la primera vuelta presidencial del 31 de mayo de 2026. <b>Iván Cepeda ganó la ciudad con holgura</b>, pero Abelardo de la Espriella se impuso en el cinturón de barrios más pudientes. Pasa el cursor sobre un barrio para ver el detalle.</p>
+    <p class="dek" id="dek">Cómo ha votado Cali en las últimas elecciones presidenciales. Elige una votación y pasa el cursor sobre un barrio para ver el detalle.</p>
+
+    <div class="selector" id="selector" role="tablist"></div>
 
     <div class="citybar" id="cityBar">—</div>
 
     <div class="scoreline">
-      <div class="seg cep"><span class="n" id="cepN">—</span><div class="lbl">barrios en comunas que ganó <b>Cepeda</b></div></div>
-      <div class="seg abe"><span class="n" id="abeN">—</span><div class="lbl">barrios en comunas que ganó <b>Abelardo</b></div></div>
+      <div class="seg" id="segA"><span class="n">—</span><div class="lbl">—</div></div>
+      <div class="seg" id="segB"><span class="n">—</span><div class="lbl">—</div></div>
     </div>
 
-    <div class="legend">
-      <span style="margin-left:0"><b style="color:var(--cep)">Cepeda</b></span><span class="grad gcep"></span>
-      <span style="margin-left:6px"><b style="color:var(--abe)">Abelardo</b></span><span class="grad gabe"></span>
-      <span style="margin-left:auto"><span class="dot"></span>tendencia de comuna (barrio sin puesto)</span>
-    </div>
+    <div class="legend" id="legend"></div>
   </header>
 </div>
 
 <div class="wrap">
   <div id="map"><div class="loading" id="mapLoading">Cargando mapa de Cali…</div></div>
-  <p class="capnote">117 barrios tienen al menos un puesto de votación geolocalizado y muestran su <b>resultado directo</b>; los demás (borde punteado) se colorean por la <b>tendencia de su comuna</b>. Color = ganador; intensidad = margen.</p>
+  <p class="capnote" id="capnote"></p>
 </div>
 
 <div class="wrap">
   <section class="tables">
     <h2>Los extremos de cada lado</h2>
-    <p class="sub">Los puestos de votación donde cada candidato sacó su mayor porcentaje (de 216 puestos en Cali).</p>
+    <p class="sub" id="tablesSub"></p>
     <div class="grid">
       <div class="col">
-        <h3><span class="chip" style="background:var(--cep)"></span>Puestos más Cepeda</h3>
-        <table id="tCep"></table>
+        <h3 id="hA"><span class="chip"></span><span></span></h3>
+        <table id="tA"></table>
       </div>
       <div class="col">
-        <h3><span class="chip" style="background:var(--abe)"></span>Puestos más Abelardo</h3>
-        <table id="tAbe"></table>
+        <h3 id="hB"><span class="chip"></span><span></span></h3>
+        <table id="tB"></table>
       </div>
     </div>
   </section>
 </div>
 
 <div class="wrap">
+  <section class="compare">
+    <h2>Tres votaciones, la misma frontera</h2>
+    <p class="sub">La divisoria electoral de Cali es notablemente estable. Las comunas <b>2, 17, 19 y 22</b> —las de mayor estrato— votaron por Rodolfo Hernández en la segunda vuelta de 2022 y por Abelardo de la Espriella en 2026; el resto de la ciudad, el oriente y la ladera populares, votó por Gustavo Petro y luego por Iván Cepeda. Entre primeras vueltas, el candidato de la izquierda pasó de 53,4% (Petro) a 51,5% (Cepeda).</p>
+    <table id="compareTable"></table>
+  </section>
+</div>
+
+<div class="wrap">
   <footer>
     <h3>Metodología y fuentes</h3>
-    <p><b>Resultados:</b> escrutinio oficial de la <a href="https://escrutiniospresidente2026.registraduria.gov.co/publicadas" target="_blank" rel="noopener">Registraduría Nacional del Estado Civil</a> — primera vuelta presidencial, 31 de mayo de 2026 (archivos publicados por mesa). Cali: 216 puestos, 5.158 mesas, 1.056.380 votos válidos.</p>
-    <p><b>Granularidad:</b> el escrutinio georreferencia cada puesto a su comuna, no a su barrio. Para bajar a barrio, los 216 puestos se geolocalizaron cruzándolos con la capa de <a href="https://ws-idesc.cali.gov.co/geoserver" target="_blank" rel="noopener">establecimientos educativos de IDESC</a> y geocodificación (OpenStreetMap). 117 barrios contienen al menos un puesto y muestran su resultado directo (validado por comuna); los 222 restantes heredan la tendencia de su comuna. Es una aproximación —no un conteo barrio a barrio— en la línea del mapa de Bogotá que lo inspira.</p>
+    <p><b>Resultados 2026:</b> escrutinio oficial de la <a href="https://escrutiniospresidente2026.registraduria.gov.co/publicadas" target="_blank" rel="noopener">Registraduría Nacional del Estado Civil</a> — primera vuelta presidencial, 31 de mayo de 2026 (archivos publicados por mesa). Cali: 216 puestos, 5.158 mesas, 1.056.380 votos válidos.</p>
+    <p><b>Resultados 2022:</b> escrutinio oficial mesa a mesa de las dos vueltas presidenciales (29 de mayo y 19 de junio de 2022), archivos <span class="mono">MMV_NACIONAL_PRESIDENTE_2022</span> del <a href="https://observatorio.registraduria.gov.co/views/electoral/historicos-resultados.php" target="_blank" rel="noopener">Visor de histórico de resultados electorales de la Registraduría</a>. Cali: 190 puestos; 989.928 votos válidos en primera vuelta y 1.033.345 en segunda.</p>
+    <p><b>Granularidad:</b> el escrutinio georreferencia cada puesto a su comuna, no a su barrio. Para bajar a barrio, los puestos se geolocalizaron cruzándolos con la capa de <a href="https://ws-idesc.cali.gov.co/geoserver" target="_blank" rel="noopener">establecimientos educativos de IDESC</a> y geocodificación (OpenStreetMap). En 2026, 117 barrios contienen al menos un puesto y muestran su resultado directo (validado por comuna); en 2022 son 108, porque 26 puestos de 2026 aún no existían. Los demás barrios heredan la tendencia de su comuna. Es una aproximación —no un conteo barrio a barrio— en la línea del mapa de Bogotá que lo inspira. Los puestos de 2022 se cruzaron con los de 2026 por su código de zona y puesto (188 de 190 coinciden; los 2 restantes, en el corregimiento El Hormiguero, se emparejaron por nombre).</p>
+    <p><b>Vista de cambio 2022→2026:</b> compara el voto de izquierda entre primeras vueltas (Petro 2022 vs. Cepeda 2026) usando <b>solo los 190 puestos presentes en ambas elecciones</b>, para no contaminar la comparación con los 26 puestos creados después de 2022. «Derecha» agrupa Fico + Rodolfo en 2022 y Abelardo + Paloma en 2026.</p>
     <p><b>Geometría:</b> <a href="https://datos.cali.gov.co/dataset/capa-de-barrios-de-santiago-de-cali" target="_blank" rel="noopener">Capa de Barrios y Sectores — IDESC / Alcaldía de Santiago de Cali</a> (339 barrios, 22 comunas, vía WFS reproyectada a WGS84).</p>
     <p style="margin-top:18px;font-size:12px;color:#999">Inspirado en el <a href="https://x.com/RicardoRuiz_/status/2061968087369265423" target="_blank" rel="noopener">mapa de Bogotá de Ricardo Ruiz</a>. Hecho por <a href="https://danielotero.dev/" target="_blank" rel="noopener">Daniel Otero</a>.</p>
   </footer>
@@ -139,76 +153,249 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-const ABE='#e4572e', CEP='#138086';
+const ELECCIONES={
+  '2022-1v':{
+    label:'2022 · 1ª vuelta',
+    banner:'Presidencial 1ª vuelta, 29 de mayo de 2022',
+    kicker:'Elecciones 2022 · Primera vuelta · Cali',
+    dek:'El 29 de mayo de 2022 <b>Gustavo Petro ganó Cali con el 53,4%</b> y se impuso en 21 de las 22 comunas. Federico «Fico» Gutiérrez, segundo en la ciudad, solo ganó la comuna 22; Rodolfo Hernández, tercero, no ganó ninguna.',
+    res:'data/resultados_2022_1v.json', pue:'data/puestos_resultados_2022_1v.json',
+    cands:{Petro:{nombre:'Petro',color:'#7b3fa0'},Fico:{nombre:'Fico',color:'#2f5fa5'},Rodolfo:{nombre:'Rodolfo',color:'#cf8a00'},Fajardo:{nombre:'Fajardo',color:'#caa24a'},Blanco:{nombre:'Blanco',color:'#9aa0a6'}},
+    citybar:['Petro','Fico','Rodolfo','Fajardo'], tip:['Petro','Fico','Rodolfo','Fajardo'], top2:['Petro','Fico'],
+    atrib:'Resultados: escrutinio Registraduría 2022 (1ª vuelta)'
+  },
+  '2022-2v':{
+    label:'2022 · 2ª vuelta',
+    banner:'Presidencial 2ª vuelta, 19 de junio de 2022',
+    kicker:'Elecciones 2022 · Segunda vuelta · Cali',
+    dek:'El 19 de junio de 2022 <b>Petro alcanzó en Cali el 63,9%</b> frente a Rodolfo Hernández. Rodolfo solo ganó las comunas 2, 17, 19 y 22 — exactamente las mismas que Abelardo de la Espriella ganaría cuatro años después.',
+    res:'data/resultados_2022_2v.json', pue:'data/puestos_resultados_2022_2v.json',
+    cands:{Petro:{nombre:'Petro',color:'#7b3fa0'},Rodolfo:{nombre:'Rodolfo',color:'#cf8a00'},Blanco:{nombre:'Blanco',color:'#9aa0a6'}},
+    citybar:['Petro','Rodolfo','Blanco'], tip:['Petro','Rodolfo','Blanco'], top2:['Petro','Rodolfo'],
+    atrib:'Resultados: escrutinio Registraduría 2022 (2ª vuelta)'
+  },
+  '2026-1v':{
+    label:'2026 · 1ª vuelta',
+    banner:'Presidencial 1ª vuelta, 31 de mayo de 2026',
+    kicker:'Elecciones 2026 · Primera vuelta · Cali',
+    dek:'Cómo votó Cali en la primera vuelta presidencial del 31 de mayo de 2026. <b>Iván Cepeda ganó la ciudad con holgura</b>, pero Abelardo de la Espriella se impuso en el cinturón de barrios más pudientes. Pasa el cursor sobre un barrio para ver el detalle.',
+    res:'data/resultados.json', pue:'data/puestos_resultados.json',
+    cands:{Cepeda:{nombre:'Cepeda',color:'#138086'},Abelardo:{nombre:'Abelardo',color:'#e4572e'},Paloma:{nombre:'Paloma',color:'#9b8cf0'},Fajardo:{nombre:'Fajardo',color:'#caa24a'},Blanco:{nombre:'Blanco',color:'#9aa0a6'}},
+    citybar:['Cepeda','Abelardo','Paloma','Fajardo'], tip:['Cepeda','Abelardo','Paloma','Fajardo'], top2:['Cepeda','Abelardo'],
+    atrib:'Resultados: escrutinio Registraduría 2026'
+  },
+  'cambio':{
+    label:'Cambio 22→26',
+    type:'cambio',
+    banner:'Comparación de primeras vueltas: 2022 y 2026',
+    kicker:'2022 → 2026 · Primeras vueltas · Cali',
+    dek:'¿Dónde creció y dónde se desinfló la izquierda entre las primeras vueltas? <b>La ciudad se polarizó:</b> Cepeda superó la votación de Petro en el oriente y la ladera populares, pero retrocedió en las comunas de clase media y alta del norte y el corredor sur.',
+    res:'data/cambio_1v.json', pue:'data/cambio_puestos.json',
+    up:{nombre:'mejora la izquierda',color:'#138086'}, down:{nombre:'retrocede',color:'#e4572e'},
+    atrib:'Cambio 1V 2022 → 1V 2026 · escrutinios Registraduría'
+  }
+};
+const DEFAULT_TAG='2026-1v';
+
 const shade=(hex,t)=>{const c=parseInt(hex.slice(1),16),r=c>>16,g=(c>>8)&255,b=c&255,m=v=>Math.round(255-(255-v)*t);return `rgb(${m(r)},${m(g)},${m(b)})`;};
+const lightMix=hex=>shade(hex,0.28);
 const intensity=m=>Math.max(0.22,Math.min(1,0.22+m*1.7));
+const intensityD=d=>Math.max(0.18,Math.min(1,0.18+Math.abs(d)*12));
 const pct=n=>(n*100).toFixed(1)+'%';
+const pts=n=>(n>0?'+':'−')+Math.abs(n*100).toFixed(1);
 const fmt=n=>n.toLocaleString('es-CO');
 
-Promise.all([
-  fetch('data/barrios.geojson').then(r=>r.json()),
-  fetch('data/resultados.json').then(r=>r.json()),
-  fetch('data/puestos_resultados.json').then(r=>r.json())
-]).then(([geo,res,puestos])=>{
-  const R=res.barrios, M=res._meta;
-  document.getElementById('mapLoading').remove();
+const cache={};
+let current=null, layer=null, map=null, geo=null, attrib=null;
 
-  // headline ciudad
-  const c=M.ciudad.pct;
-  document.getElementById('cityBar').innerHTML=
-    `Cali: <b>Cepeda ${pct(c.Cepeda)}</b> · <span class="a">Abelardo ${pct(c.Abelardo)}</span> · Paloma ${pct(c.Paloma)} · Fajardo ${pct(c.Fajardo)}`;
-  document.getElementById('cepN').textContent=M.ciudad.cepeda_barrios;
-  document.getElementById('abeN').textContent=M.ciudad.abelardo_barrios;
+function loadData(tag){
+  if(cache[tag]) return Promise.resolve(cache[tag]);
+  const cfg=ELECCIONES[tag];
+  return Promise.all([fetch(cfg.res).then(r=>r.json()),fetch(cfg.pue).then(r=>r.json())])
+    .then(([res,puestos])=>(cache[tag]={res,puestos}));
+}
 
-  const map=L.map('map',{zoomControl:true,attributionControl:false,scrollWheelZoom:false}).setView([3.42,-76.53],12);
-  L.control.attribution({prefix:false}).addAttribution('Barrios: IDESC Cali · Resultados: escrutinio Registraduría 2026').addTo(map);
+function style(f){
+  const d=current.res.barrios[f.properties.id];
+  if(!d) return {fillColor:'#ddd',weight:.4,color:'#fff',fillOpacity:.7};
+  const inf=d.nivel==='inferido';
+  const base=current.cfg.type==='cambio'
+    ? (d.d>0?current.cfg.up.color:current.cfg.down.color)
+    : (current.cfg.cands[d.ganador]||{color:'#888'}).color;
+  const t=current.cfg.type==='cambio'?intensityD(d.d):intensity(d.margen);
+  return {fillColor:shade(base,t),
+    weight:inf?0.8:0.5, color:inf?'#8a8a8a':'#ffffff',
+    dashArray:inf?'2,2':null, fillOpacity:inf?0.62:0.95};
+}
 
-  function style(f){
-    const d=R[f.properties.id];
-    if(!d) return {fillColor:'#ddd',weight:.4,color:'#fff',fillOpacity:.7};
-    const base=d.ganador==='Cepeda'?CEP:ABE;
-    const inf=d.nivel==='inferido';
-    return {fillColor:shade(base,intensity(d.margen)),
-      weight:inf?0.8:0.5, color:inf?'#8a8a8a':'#ffffff',
-      dashArray:inf?'2,2':null, fillOpacity:inf?0.62:0.95};
-  }
-  function tipHTML(f){
-    const p=f.properties,d=R[p.id];
-    if(!d) return `<div class="tip"><div class="bn">${p.barrio}</div><div class="cm">Sin datos</div></div>`;
-    const rows=[['Cepeda',d.pct.Cepeda,CEP],['Abelardo',d.pct.Abelardo,ABE],
-      ['Paloma',d.pct.Paloma,'#9b8cf0'],['Fajardo',d.pct.Fajardo,'#caa24a']];
-    const bars=rows.map(([n,v,col])=>`<div class="row"><span class="name">${n}</span>
-      <span class="bar" style="width:${Math.max(2,v*130)}px;background:${col}"></span>
-      <span class="v">${pct(v)}</span></div>`).join('');
-    const tag=d.nivel==='directo'
-      ? `${d.npuestos} puesto${d.npuestos>1?'s':''} · ${fmt(d.total)} votos`
-      : `tendencia de comuna`;
+function tipHTML(f){
+  const p=f.properties,d=current.res.barrios[p.id],cfg=current.cfg;
+  if(!d) return `<div class="tip"><div class="bn">${p.barrio}</div><div class="cm">Sin datos</div></div>`;
+  const tag=d.nivel==='directo'
+    ? `${d.npuestos} puesto${d.npuestos>1?'s':''}${d.total?` · ${fmt(d.total)} votos`:''}`
+    : `tendencia de comuna`;
+  if(cfg.type==='cambio'){
+    const col=d.d>0?cfg.up.color:cfg.down.color;
     return `<div class="tip"><div class="bn">${p.barrio}</div>
       <div class="cm">${d.comnom} · ${tag}</div>
-      <div class="bars">${bars}</div></div>`;
+      <div class="bars">
+        <div class="row"><span class="name" style="width:auto;font-weight:700;color:${col}">Izquierda ${pts(d.d)} pts</span></div>
+        <div class="row"><span class="name" style="width:72px">Petro 22</span><span class="bar" style="width:${Math.max(2,d.izq22*130)}px;background:#7b3fa0"></span><span class="v">${pct(d.izq22)}</span></div>
+        <div class="row"><span class="name" style="width:72px">Cepeda 26</span><span class="bar" style="width:${Math.max(2,d.izq26*130)}px;background:#138086"></span><span class="v">${pct(d.izq26)}</span></div>
+        <div class="row"><span class="name" style="width:72px">Der. 22</span><span class="bar" style="width:${Math.max(2,d.der22*130)}px;background:#f0b08e"></span><span class="v">${pct(d.der22)}</span></div>
+        <div class="row"><span class="name" style="width:72px">Der. 26</span><span class="bar" style="width:${Math.max(2,d.der26*130)}px;background:#e4572e"></span><span class="v">${pct(d.der26)}</span></div>
+      </div></div>`;
   }
-  const layer=L.geoJSON(geo,{style,onEachFeature:(f,lyr)=>{
+  const bars=cfg.tip.map(k=>`<div class="row"><span class="name">${cfg.cands[k].nombre}</span>
+    <span class="bar" style="width:${Math.max(2,(d.pct[k]||0)*130)}px;background:${cfg.cands[k].color}"></span>
+    <span class="v">${pct(d.pct[k]||0)}</span></div>`).join('');
+  return `<div class="tip"><div class="bn">${p.barrio}</div>
+    <div class="cm">${d.comnom} · ${tag}</div>
+    <div class="bars">${bars}</div></div>`;
+}
+
+function fillTable(tid,hid,key){
+  const cfg=current.cfg, color=cfg.cands[key].color;
+  const h=document.getElementById(hid);
+  h.querySelector('.chip').style.background=color;
+  h.querySelector('span:last-child').textContent='Puestos más '+cfg.cands[key].nombre;
+  const arr=Object.values(current.puestos).map(d=>{
+    const valid=d.total-(d.votos.NoValidos||0)||1;
+    return {nombre:d.nombre,comnom:d.comnom,v:(d.votos[key]||0)/valid};
+  }).sort((a,b)=>b.v-a.v).slice(0,8);
+  document.getElementById(tid).innerHTML=arr.map(r=>`<tr>
+    <td class="b">${r.nombre}<div style="font-size:11px;color:#999;font-family:DM Mono">${r.comnom}</div></td>
+    <td class="barcell"><div class="minibar" style="width:${r.v*100}%;background:${color}"></div></td>
+    <td class="pct">${pct(r.v)}</td></tr>`).join('');
+}
+
+function fillTableCambio(tid,hid,dir){
+  const cfg=current.cfg, side=dir>0?cfg.up:cfg.down;
+  const h=document.getElementById(hid);
+  h.querySelector('.chip').style.background=side.color;
+  h.querySelector('span:last-child').textContent=dir>0?'Donde más mejora la izquierda':'Donde más retrocede';
+  const arr=Object.values(current.puestos).filter(d=>dir>0?d.d>0:d.d<0)
+    .sort((a,b)=>dir*(b.d-a.d)).slice(0,8);
+  const maxd=Math.max(...arr.map(d=>Math.abs(d.d)))||1;
+  document.getElementById(tid).innerHTML=arr.map(r=>`<tr>
+    <td class="b">${r.nombre}<div style="font-size:11px;color:#999;font-family:DM Mono">${r.comnom} · ${pct(r.izq22)} → ${pct(r.izq26)}</div></td>
+    <td class="barcell"><div class="minibar" style="width:${Math.abs(r.d)/maxd*100}%;background:${side.color}"></div></td>
+    <td class="pct">${pts(r.d)}</td></tr>`).join('');
+}
+
+function render(tag){
+  const cfg=ELECCIONES[tag], {res,puestos}=cache[tag];
+  current={cfg,res,puestos};
+  const M=res._meta, cambio=cfg.type==='cambio';
+  const nP=Object.keys(puestos).length;
+
+  document.querySelectorAll('.selector button').forEach(btn=>btn.classList.toggle('active',btn.dataset.tag===tag));
+  const act=document.querySelector('.selector button.active');
+  if(act) act.parentNode.scrollLeft=Math.max(0,act.offsetLeft-24);
+  document.getElementById('bannerElec').textContent=cfg.banner;
+  document.getElementById('kicker').textContent=cfg.kicker;
+  document.getElementById('dek').innerHTML=cfg.dek;
+
+  if(cambio){
+    const c=M.ciudad;
+    document.documentElement.style.setProperty('--accent',cfg.up.color);
+    document.getElementById('cityBar').innerHTML=
+      `Cali (izquierda): <b style="color:#7b3fa0">Petro 22 ${pct(c.izq22)}</b> → <b style="color:${cfg.up.color}">Cepeda 26 ${pct(c.izq26)}</b> · <b style="color:${cfg.down.color}">${pts(c.d)} pts</b>`;
+    [[cfg.up,c.barrios_mejora,'mejora la izquierda','segA'],[cfg.down,c.barrios_retrocede,'retrocede','segB']].forEach(([side,n,lbl,id])=>{
+      const el=document.getElementById(id);
+      el.style.background=lightMix(side.color);
+      el.querySelector('.n').textContent=n;
+      el.querySelector('.n').style.color=side.color;
+      el.querySelector('.lbl').innerHTML=`barrios donde <b>${lbl}</b>`;
+    });
+    document.getElementById('legend').innerHTML=
+      `<span><b style="color:${cfg.up.color}">mejora</b></span><span class="grad" style="background:linear-gradient(90deg,${shade(cfg.up.color,0.3)},${cfg.up.color})"></span>`+
+      `<span style="margin-left:6px"><b style="color:${cfg.down.color}">retrocede</b></span><span class="grad" style="background:linear-gradient(90deg,${shade(cfg.down.color,0.3)},${cfg.down.color})"></span>`+
+      `<span style="margin-left:auto"><span class="dot"></span>tendencia de comuna (barrio sin puesto)</span>`;
+    document.getElementById('capnote').innerHTML=`Cambio del voto de izquierda (Petro 1V-2022 → Cepeda 1V-2026) sobre los <b>${nP} puestos presentes en ambas elecciones</b>. ${M.ciudad.barrios_directos} barrios muestran su cambio directo; los demás (borde punteado), el de su comuna. Color = dirección; intensidad = magnitud.`;
+    document.getElementById('tablesSub').textContent=`Los puestos de votación con el mayor cambio en cada dirección (de ${nP} puestos comparables).`;
+    fillTableCambio('tA','hA',+1);
+    fillTableCambio('tB','hB',-1);
+  }else{
+    const c=M.ciudad.pct, [a,b]=cfg.top2;
+    document.documentElement.style.setProperty('--accent',cfg.cands[a].color);
+    document.getElementById('cityBar').innerHTML='Cali: '+cfg.citybar.map((k,i)=>
+      `<b style="color:${i<2?cfg.cands[k].color:'inherit'}">${cfg.cands[k].nombre} ${pct(c[k]||0)}</b>`).join(' · ');
+    const won=M.ciudad.barrios_ganados||{};
+    [[a,'segA'],[b,'segB']].forEach(([k,id])=>{
+      const el=document.getElementById(id);
+      el.style.background=lightMix(cfg.cands[k].color);
+      el.querySelector('.n').textContent=won[k]??'—';
+      el.querySelector('.n').style.color=cfg.cands[k].color;
+      el.querySelector('.lbl').innerHTML=`barrios donde gana <b>${cfg.cands[k].nombre}</b>`;
+    });
+    document.getElementById('legend').innerHTML=
+      `<span><b style="color:${cfg.cands[a].color}">${cfg.cands[a].nombre}</b></span><span class="grad" style="background:linear-gradient(90deg,${shade(cfg.cands[a].color,0.35)},${cfg.cands[a].color})"></span>`+
+      `<span style="margin-left:6px"><b style="color:${cfg.cands[b].color}">${cfg.cands[b].nombre}</b></span><span class="grad" style="background:linear-gradient(90deg,${shade(cfg.cands[b].color,0.35)},${cfg.cands[b].color})"></span>`+
+      `<span style="margin-left:auto"><span class="dot"></span>tendencia de comuna (barrio sin puesto)</span>`;
+    document.getElementById('capnote').innerHTML=`${M.ciudad.barrios_directos} barrios tienen al menos un puesto de votación geolocalizado y muestran su <b>resultado directo</b>; los demás (borde punteado) se colorean por la <b>tendencia de su comuna</b>. Color = ganador; intensidad = margen.`;
+    document.getElementById('tablesSub').textContent=`Los puestos de votación donde cada candidato sacó su mayor porcentaje (de ${nP} puestos en Cali).`;
+    fillTable('tA','hA',a);
+    fillTable('tB','hB',b);
+  }
+
+  if(layer){
+    layer.setStyle(style);
+    layer.eachLayer(l=>l.setTooltipContent(tipHTML(l.feature)));
+  }
+  if(attrib){
+    attrib.remove();
+    attrib=L.control.attribution({prefix:false}).addAttribution('Barrios: IDESC Cali · '+cfg.atrib).addTo(map);
+  }
+
+  if(location.hash.replace('#','')!==tag) history.replaceState(null,'','#'+tag);
+}
+
+function switchTo(tag){ loadData(tag).then(()=>render(tag)); }
+
+// selector
+const sel=document.getElementById('selector');
+Object.entries(ELECCIONES).forEach(([tag,cfg])=>{
+  const b=document.createElement('button');
+  b.textContent=cfg.label; b.dataset.tag=tag; b.onclick=()=>switchTo(tag);
+  sel.appendChild(b);
+});
+
+// tabla comparativa fija
+function buildCompare(){
+  const rows=[
+    ['2022 · 1ª vuelta','2022-1v','Petro','Fico'],
+    ['2022 · 2ª vuelta','2022-2v','Petro','Rodolfo'],
+    ['2026 · 1ª vuelta','2026-1v',null,null]
+  ].map(([label,tag])=>{
+    const cfg=ELECCIONES[tag], M=cache[tag].res._meta.ciudad, [a,b]=cfg.top2;
+    const sw=k=>`<span class="swatch" style="background:${cfg.cands[k].color}"></span>`;
+    return `<tr><td class="b">${label}</td>
+      <td>${sw(a)}${cfg.cands[a].nombre}</td><td class="pct">${pct(M.pct[a])}</td>
+      <td>${sw(b)}${cfg.cands[b].nombre}</td><td class="pct">${pct(M.pct[b])}</td>
+      <td class="pct">${M.barrios_ganados[b]}</td></tr>`;
+  }).join('');
+  document.getElementById('compareTable').innerHTML=
+    `<tr><th>Votación</th><th colspan="2">Ganador en Cali</th><th colspan="2">Segundo</th><th>barrios del segundo</th></tr>`+rows;
+}
+
+const initTag=ELECCIONES[location.hash.replace('#','')]?location.hash.replace('#',''):DEFAULT_TAG;
+
+Promise.all([fetch('data/barrios.geojson').then(r=>r.json()),loadData(initTag)]).then(([g])=>{
+  geo=g;
+  document.getElementById('mapLoading').remove();
+  map=L.map('map',{zoomControl:true,attributionControl:false,scrollWheelZoom:false}).setView([3.42,-76.53],12);
+  current={cfg:ELECCIONES[initTag],...cache[initTag]};
+  layer=L.geoJSON(geo,{style,onEachFeature:(f,lyr)=>{
     lyr.bindTooltip(tipHTML(f),{sticky:true,direction:'top',opacity:1});
     lyr.on('mouseover',()=>lyr.setStyle({weight:1.6,color:'#1a1a1a'}));
-    lyr.on('mouseout',()=>layer.resetStyle(lyr));
+    lyr.on('mouseout',()=>{layer.resetStyle(lyr)});
   }}).addTo(map);
   map.fitBounds(layer.getBounds(),{padding:[12,12]});
-
-  // tablas de extremos por PUESTO (datos reales)
-  const arr=Object.values(puestos).map(d=>{
-    const valid=d.total-(d.votos.NoValidos||0)||1;
-    return {nombre:d.nombre,comnom:d.comnom,total:d.total,
-            cep:d.votos.Cepeda/valid, abe:d.votos.Abelardo/valid};
-  });
-  function fill(tid,key,color){
-    const rows=[...arr].sort((a,b)=>b[key]-a[key]).slice(0,8);
-    document.getElementById(tid).innerHTML=rows.map(r=>`<tr>
-      <td class="b">${r.nombre}<div style="font-size:11px;color:#999;font-family:DM Mono">${r.comnom}</div></td>
-      <td class="barcell"><div class="minibar" style="width:${r[key]*100}%;background:${color}"></div></td>
-      <td class="pct">${pct(r[key])}</td></tr>`).join('');
-  }
-  fill('tCep','cep',CEP);
-  fill('tAbe','abe',ABE);
+  attrib=L.control.attribution({prefix:false}).addTo(map);
+  render(initTag);
+  // precarga las otras elecciones y arma la tabla comparativa
+  Promise.all(Object.keys(ELECCIONES).map(loadData)).then(buildCompare);
 }).catch(e=>{
   document.getElementById('map').innerHTML='<div class="loading">Error cargando datos: '+e.message+'</div>';
   console.error(e);
