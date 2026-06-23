@@ -9,7 +9,7 @@ Dev local: `python3 -m http.server` (los `fetch()` de `/data` no funcionan con f
 
 - Toda la lógica de vistas vive en `index.html` (objeto `ELECCIONES`); cada vista define
   sus archivos de datos, candidatos, colores y textos. La vista activa va en el hash
-  (`#2022-1v`, `#2022-2v`, `#2026-1v`, `#cambio`).
+  (`#2022-1v`, `#2022-2v`, `#2026-1v`, `#2026-2v`, `#cambio`).
 - `total` por puesto/barrio/comuna = votos **brutos** (incluye `NoValidos`).
   Los `pct` son sobre votos **válidos** (`total - NoValidos`). No mezclar.
 - Barrio `directo` = tiene ≥1 puesto geolocalizado; `inferido` = hereda los pct de su comuna.
