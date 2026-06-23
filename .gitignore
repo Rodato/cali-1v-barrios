@@ -1,3 +1,6 @@
 .vercel
 .DS_Store
 node_modules
+
+# Crudos por mesa de la Registraduría (insumos del build, no assets del sitio)
+data/MM*.csv

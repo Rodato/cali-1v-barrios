@@ -1,7 +1,7 @@
 # El mapa de Cali, barrio por barrio
 
 Sitio estático (HTML + Leaflet, sin build) con los resultados presidenciales en Cali
-por barrio: 1V-2026, 1V-2022, 2V-2022 y una vista de cambio 2022→2026.
+por barrio: 1V-2026, 2V-2026, 1V-2022, 2V-2022 y una vista de cambio 2022→2026.
 Producción: https://cali-1v-barrios.vercel.app · Deploy: `vercel --prod` (no hay auto-deploy por git).
 Dev local: `python3 -m http.server` (los `fetch()` de `/data` no funcionan con file://).
 
@@ -23,6 +23,11 @@ Dev local: `python3 -m http.server` (los `fetch()` de `/data` no funcionan con f
 
 ## Scripts (regeneran data/, corren desde la raíz)
 
+- `scripts/build_2026_2v.py` — datasets 2V-2026 desde el crudo mesa a mesa de la
+  Registraduría (`data/MMV_*_31_001_*.csv`, formato largo `;`, ya filtrado a VALLE/CALI;
+  el MMS no se usa). Reusa comuna/nombre por puesto de `puestos_resultados.json` (1V) y el
+  mapeo `puesto_barrio.json`. Los crudos `data/MM*.csv` están en `.gitignore` (insumos, no
+  assets). Nota: la 1V-2026 llegó ya construida en el primer commit — no hay `build_2026.py`.
 - `scripts/build_2022.py` — datasets 2022 desde los CSV oficiales mesa a mesa
   (`MMV_NACIONAL_PRESIDENTE_2022_{1v,2v}.zip` del Observatorio de la Registraduría,
   https://observatorio.registraduria.gov.co/anexos/ — filtrar DEP=31 VALLE, MUN=001 CALI).
