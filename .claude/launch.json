@@ -6,6 +6,13 @@
       "runtimeExecutable": "/opt/homebrew/bin/python3.11",
       "runtimeArgs": ["-m", "http.server", "4173"],
       "port": 4173
+    },
+    {
+      "name": "narrativas",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "/Users/daniel/Documents/Dev/Narrativas-2026/frontend"],
+      "port": 3000,
+      "autoPort": true
     }
   ]
 }
